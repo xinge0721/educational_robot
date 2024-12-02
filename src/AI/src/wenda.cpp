@@ -202,6 +202,7 @@ int main(int argc, char** argv)
                 // 清空 1.txt 文件中的内容，准备下一个问题
                 clearFile(FILE_1_PATH);
 
+
                 // 允许再次输入新问题
                 canAsk = true;
             }
