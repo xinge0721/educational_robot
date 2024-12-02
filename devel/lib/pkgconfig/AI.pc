@@ -1,0 +1,8 @@
+prefix=/home/ros/chenxu/educational_robot/devel
+
+Name: AI
+Description: Description of AI
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
