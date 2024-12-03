@@ -56,7 +56,7 @@ def clear_file(file_path):
 
 if __name__ == '__main__':
     # 设定1.txt文件的绝对路径
-    file_path = '/home/ros/chenxu/educational_robot/data/1.txt'
+    file_path = '../data/1.txt'
     print("我：")
     while True:
         # 从1.txt文件读取内容
