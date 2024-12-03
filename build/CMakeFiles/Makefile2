@@ -955,6 +955,24 @@ clean: AI/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory voice
+
+# Convenience name for "all" pass in the directory.
+voice/all:
+
+.PHONY : voice/all
+
+# Convenience name for "clean" pass in the directory.
+voice/clean:
+
+.PHONY : voice/clean
+
+# Convenience name for "preinstall" pass in the directory.
+voice/preinstall:
+
+.PHONY : voice/preinstall
+
+#=============================================================================
 # Special targets to cleanup operation of make.
 
 # Special rule to run CMake to check the build system integrity.

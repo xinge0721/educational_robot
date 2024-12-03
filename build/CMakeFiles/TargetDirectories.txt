@@ -58,3 +58,10 @@
 /home/ros/chenxu/educational_robot/build/AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir
 /home/ros/chenxu/educational_robot/build/AI/CMakeFiles/roscpp_generate_messages_nodejs.dir
 /home/ros/chenxu/educational_robot/build/AI/CMakeFiles/std_msgs_generate_messages_py.dir
+/home/ros/chenxu/educational_robot/build/voice/CMakeFiles/install/strip.dir
+/home/ros/chenxu/educational_robot/build/voice/CMakeFiles/edit_cache.dir
+/home/ros/chenxu/educational_robot/build/voice/CMakeFiles/list_install_components.dir
+/home/ros/chenxu/educational_robot/build/voice/CMakeFiles/test.dir
+/home/ros/chenxu/educational_robot/build/voice/CMakeFiles/install/local.dir
+/home/ros/chenxu/educational_robot/build/voice/CMakeFiles/rebuild_cache.dir
+/home/ros/chenxu/educational_robot/build/voice/CMakeFiles/install.dir
