@@ -32,7 +32,7 @@
 extern "C" {
 #endif /* C++ */
 
-#include "msp_types.h"
+#include "voice/msp_types.h"
 
 /** 
  * @fn		QISRSessionBegin

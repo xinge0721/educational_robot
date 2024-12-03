@@ -20,7 +20,7 @@
 #ifndef __IFLY_WINREC_H__
 #define __IFLY_WINREC_H__
 
-#include "formats.h"
+#include "voice/formats.h"
 /* error code */
 enum {
 	RECORD_ERR_BASE = 0,

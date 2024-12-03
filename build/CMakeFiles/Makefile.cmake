@@ -209,4 +209,5 @@ set(CMAKE_DEPEND_INFO_FILES
   "AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/DependInfo.cmake"
   "AI/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake"
+  "voice/CMakeFiles/iat_online_record_sample.dir/DependInfo.cmake"
   )

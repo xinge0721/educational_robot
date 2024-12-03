@@ -6,11 +6,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include "qisr.h"
-#include "msp_cmn.h"
-#include "msp_errors.h"
-#include "speech_recognizer.h"
-
+#include "voice/qisr.h"
+#include "voice/msp_cmn.h"
+#include "voice/msp_errors.h"
+#include "voice/speech_recognizer.h"
+#include "ros/ros.h"
+#include "std_msgs/String.h"
 #define FRAME_LEN	640 
 #define	BUFFER_SIZE	4096
 
@@ -269,12 +270,10 @@ static void demo_mic(const char* session_begin_params)
 /* 主函数：程序入口 */
 int main(int argc, char* argv[])
 {
+	ros::init(argc,argv,"voice_main");
 	int ret = MSP_SUCCESS; // 登录状态标志，初始化为成功
-	int upload_on =	0; // 是否上传用户词表的标志，1 表示上传
 	/* 登录参数：包括应用 ID 和工作目录 */
 	const char* login_params = "appid = 68a31b42, work_dir = .";
-	int aud_src = 1; // 音频来源，0 表示文件，1 表示麦克风
-
 	/*
 	 * 语音识别会话参数，定义语音识别的配置
 	 * 包括子服务类型、领域、语言、口音、采样率、结果格式等

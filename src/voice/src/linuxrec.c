@@ -13,8 +13,8 @@
 #include <signal.h>
 #include <sys/stat.h>
 #include <pthread.h>
-#include "formats.h"
-#include "linuxrec.h"
+#include "voice/formats.h"
+#include "voice/linuxrec.h"
 
 #define DBG_ON 1
 

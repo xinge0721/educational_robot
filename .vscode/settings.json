@@ -4,5 +4,13 @@
     ],
     "python.analysis.extraPaths": [
         "/opt/ros/melodic/lib/python2.7/dist-packages"
-    ]
+    ],
+    "files.associations": {
+        "speech_recognizer.h": "c",
+        "qisr.h": "c",
+        "msp_cmn.h": "c",
+        "linuxrec.h": "c",
+        "formats.h": "c",
+        "msp_types.h": "c"
+    }
 }
