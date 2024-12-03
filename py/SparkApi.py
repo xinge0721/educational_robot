@@ -105,7 +105,7 @@ def on_message(ws, message):
         print(content, end="")
 
         # 将 content 追加到 2.txt 文件中
-        file_path = '/home/ros/chenxu/jiaoyu/2.txt'
+        file_path = '/home/ros/chenxu/educational_robot/data/2.txt'
         with open(file_path, 'a', encoding='utf-8') as file:  # 'a' 模式是追加模式
             file.write(content)  # 追加内容到文件
 
