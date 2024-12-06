@@ -6,8 +6,8 @@
 #include <chrono>
 
 // 文件路径
-const std::string FILE_1_PATH = "data/1.txt";    //问题存放路径
-const std::string FILE_2_PATH = "data/2.txt";    //答案存放路径
+const std::string FILE_1_PATH = "data/问题.txt";    //问题存放路径
+const std::string FILE_2_PATH = "data/回答.txt";    //答案存放路径
 const std::string END_MARKER = "END_OF_ANSWER"; // 用于标志回答结束
 
 // 函数：检查文件是否存在且有内容
