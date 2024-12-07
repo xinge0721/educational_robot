@@ -476,7 +476,7 @@ clean: AI/CMakeFiles/roscpp_generate_messages_py.dir/clean
 AI/CMakeFiles/wenda.dir/all:
 	$(MAKE) -f AI/CMakeFiles/wenda.dir/build.make AI/CMakeFiles/wenda.dir/depend
 	$(MAKE) -f AI/CMakeFiles/wenda.dir/build.make AI/CMakeFiles/wenda.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=14,15 "Built target wenda"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=12,13 "Built target wenda"
 .PHONY : AI/CMakeFiles/wenda.dir/all
 
 # Include target in all.
@@ -955,59 +955,22 @@ clean: AI/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Directory level rules for directory voice
+# Directory level rules for directory language
 
 # Convenience name for "all" pass in the directory.
-voice/all: voice/CMakeFiles/iat_online_record_sample.dir/all
+language/all:
 
-.PHONY : voice/all
+.PHONY : language/all
 
 # Convenience name for "clean" pass in the directory.
-voice/clean: voice/CMakeFiles/iat_online_record_sample.dir/clean
+language/clean:
 
-.PHONY : voice/clean
+.PHONY : language/clean
 
 # Convenience name for "preinstall" pass in the directory.
-voice/preinstall:
+language/preinstall:
 
-.PHONY : voice/preinstall
-
-#=============================================================================
-# Target rules for target voice/CMakeFiles/iat_online_record_sample.dir
-
-# All Build rule for target.
-voice/CMakeFiles/iat_online_record_sample.dir/all:
-	$(MAKE) -f voice/CMakeFiles/iat_online_record_sample.dir/build.make voice/CMakeFiles/iat_online_record_sample.dir/depend
-	$(MAKE) -f voice/CMakeFiles/iat_online_record_sample.dir/build.make voice/CMakeFiles/iat_online_record_sample.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=12,13 "Built target iat_online_record_sample"
-.PHONY : voice/CMakeFiles/iat_online_record_sample.dir/all
-
-# Include target in all.
-all: voice/CMakeFiles/iat_online_record_sample.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-voice/CMakeFiles/iat_online_record_sample.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 voice/CMakeFiles/iat_online_record_sample.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : voice/CMakeFiles/iat_online_record_sample.dir/rule
-
-# Convenience name for target.
-iat_online_record_sample: voice/CMakeFiles/iat_online_record_sample.dir/rule
-
-.PHONY : iat_online_record_sample
-
-# clean rule for target.
-voice/CMakeFiles/iat_online_record_sample.dir/clean:
-	$(MAKE) -f voice/CMakeFiles/iat_online_record_sample.dir/build.make voice/CMakeFiles/iat_online_record_sample.dir/clean
-.PHONY : voice/CMakeFiles/iat_online_record_sample.dir/clean
-
-# clean rule for target.
-clean: voice/CMakeFiles/iat_online_record_sample.dir/clean
-
-.PHONY : clean
+.PHONY : language/preinstall
 
 #=============================================================================
 # Special targets to cleanup operation of make.

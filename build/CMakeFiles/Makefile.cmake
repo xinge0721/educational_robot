@@ -15,13 +15,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "catkin/catkin_generated/version/package.cmake"
   "catkin_generated/installspace/_setup_util.py"
   "catkin_generated/order_packages.cmake"
-  "voice/catkin_generated/ordered_paths.cmake"
-  "voice/catkin_generated/package.cmake"
+  "language/catkin_generated/ordered_paths.cmake"
+  "language/catkin_generated/package.cmake"
   "/home/ros/chenxu/educational_robot/src/AI/CMakeLists.txt"
   "/home/ros/chenxu/educational_robot/src/AI/package.xml"
   "/home/ros/chenxu/educational_robot/src/CMakeLists.txt"
-  "/home/ros/chenxu/educational_robot/src/voice/CMakeLists.txt"
-  "/home/ros/chenxu/educational_robot/src/voice/package.xml"
+  "/home/ros/chenxu/educational_robot/src/language/CMakeLists.txt"
+  "/home/ros/chenxu/educational_robot/src/language/package.xml"
   "/opt/ros/melodic/share/catkin/cmake/../package.xml"
   "/opt/ros/melodic/share/catkin/cmake/all.cmake"
   "/opt/ros/melodic/share/catkin/cmake/assert.cmake"
@@ -179,7 +179,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "gtest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
   "gtest/googlemock/gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "AI/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "voice/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "language/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -209,5 +209,4 @@ set(CMAKE_DEPEND_INFO_FILES
   "AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/DependInfo.cmake"
   "AI/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake"
-  "voice/CMakeFiles/iat_online_record_sample.dir/DependInfo.cmake"
   )

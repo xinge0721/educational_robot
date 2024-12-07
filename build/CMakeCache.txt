@@ -345,6 +345,12 @@ gtest_hide_internal_symbols:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
+//Value Computed by CMake
+language_BINARY_DIR:STATIC=/home/ros/chenxu/educational_robot/build/language
+
+//Value Computed by CMake
+language_SOURCE_DIR:STATIC=/home/ros/chenxu/educational_robot/src/language
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/melodic/lib/libxmlrpcpp.so
 

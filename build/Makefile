@@ -492,19 +492,6 @@ std_msgs_generate_messages_py/fast:
 	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_py.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
-#=============================================================================
-# Target rules for targets named iat_online_record_sample
-
-# Build rule for target.
-iat_online_record_sample: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 iat_online_record_sample
-.PHONY : iat_online_record_sample
-
-# fast build rule for target.
-iat_online_record_sample/fast:
-	$(MAKE) -f voice/CMakeFiles/iat_online_record_sample.dir/build.make voice/CMakeFiles/iat_online_record_sample.dir/build
-.PHONY : iat_online_record_sample/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -543,7 +530,6 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
-	@echo "... iat_online_record_sample"
 .PHONY : help
 
 
