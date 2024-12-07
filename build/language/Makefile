@@ -68,26 +68,17 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target test
 test:
@@ -100,17 +91,26 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -167,6 +167,102 @@ depend:
 	cd /home/ros/chenxu/educational_robot/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+language/CMakeFiles/xf_asr.dir/rule:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/xf_asr.dir/rule
+.PHONY : language/CMakeFiles/xf_asr.dir/rule
+
+# Convenience name for target.
+xf_asr: language/CMakeFiles/xf_asr.dir/rule
+
+.PHONY : xf_asr
+
+# fast build rule for target.
+xf_asr/fast:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/build
+.PHONY : xf_asr/fast
+
+src/linuxrec.o: src/linuxrec.cpp.o
+
+.PHONY : src/linuxrec.o
+
+# target to build an object file
+src/linuxrec.cpp.o:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.o
+.PHONY : src/linuxrec.cpp.o
+
+src/linuxrec.i: src/linuxrec.cpp.i
+
+.PHONY : src/linuxrec.i
+
+# target to preprocess a source file
+src/linuxrec.cpp.i:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.i
+.PHONY : src/linuxrec.cpp.i
+
+src/linuxrec.s: src/linuxrec.cpp.s
+
+.PHONY : src/linuxrec.s
+
+# target to generate assembly for a file
+src/linuxrec.cpp.s:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.s
+.PHONY : src/linuxrec.cpp.s
+
+src/speech_recognizer.o: src/speech_recognizer.cpp.o
+
+.PHONY : src/speech_recognizer.o
+
+# target to build an object file
+src/speech_recognizer.cpp.o:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.o
+.PHONY : src/speech_recognizer.cpp.o
+
+src/speech_recognizer.i: src/speech_recognizer.cpp.i
+
+.PHONY : src/speech_recognizer.i
+
+# target to preprocess a source file
+src/speech_recognizer.cpp.i:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.i
+.PHONY : src/speech_recognizer.cpp.i
+
+src/speech_recognizer.s: src/speech_recognizer.cpp.s
+
+.PHONY : src/speech_recognizer.s
+
+# target to generate assembly for a file
+src/speech_recognizer.cpp.s:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.s
+.PHONY : src/speech_recognizer.cpp.s
+
+src/xf_asr.o: src/xf_asr.cpp.o
+
+.PHONY : src/xf_asr.o
+
+# target to build an object file
+src/xf_asr.cpp.o:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.o
+.PHONY : src/xf_asr.cpp.o
+
+src/xf_asr.i: src/xf_asr.cpp.i
+
+.PHONY : src/xf_asr.i
+
+# target to preprocess a source file
+src/xf_asr.cpp.i:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.i
+.PHONY : src/xf_asr.cpp.i
+
+src/xf_asr.s: src/xf_asr.cpp.s
+
+.PHONY : src/xf_asr.s
+
+# target to generate assembly for a file
+src/xf_asr.cpp.s:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.s
+.PHONY : src/xf_asr.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -174,12 +270,22 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... edit_cache"
-	@echo "... list_install_components"
-	@echo "... test"
 	@echo "... install/local"
+	@echo "... test"
+	@echo "... list_install_components"
+	@echo "... xf_asr"
+	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... install"
+	@echo "... src/linuxrec.o"
+	@echo "... src/linuxrec.i"
+	@echo "... src/linuxrec.s"
+	@echo "... src/speech_recognizer.o"
+	@echo "... src/speech_recognizer.i"
+	@echo "... src/speech_recognizer.s"
+	@echo "... src/xf_asr.o"
+	@echo "... src/xf_asr.i"
+	@echo "... src/xf_asr.s"
 .PHONY : help
 
 

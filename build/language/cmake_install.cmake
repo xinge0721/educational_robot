@@ -52,3 +52,18 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/language" TYPE FILE FILES "/home/ros/chenxu/educational_robot/src/language/package.xml")
 endif()
 
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/ros/chenxu/educational_robot/build/language/catkin_generated/installspace/language.pc")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/language/cmake" TYPE FILE FILES
+    "/home/ros/chenxu/educational_robot/build/language/catkin_generated/installspace/languageConfig.cmake"
+    "/home/ros/chenxu/educational_robot/build/language/catkin_generated/installspace/languageConfig-version.cmake"
+    )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/language" TYPE FILE FILES "/home/ros/chenxu/educational_robot/src/language/package.xml")
+endif()
+

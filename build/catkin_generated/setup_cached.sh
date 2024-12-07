@@ -9,6 +9,7 @@
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/ros/chenxu/educational_robot/devel:$CMAKE_PREFIX_PATH"
 export LD_LIBRARY_PATH="/home/ros/chenxu/educational_robot/devel/lib:$LD_LIBRARY_PATH"
+export PATH='/opt/ros/melodic/bin:/home/ros/.local/bin:/home/ros/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
 export PKG_CONFIG_PATH="/home/ros/chenxu/educational_robot/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/ros/chenxu/educational_robot/build'
 export ROSLISP_PACKAGE_DIRECTORIES='/home/ros/chenxu/educational_robot/devel/share/common-lisp'

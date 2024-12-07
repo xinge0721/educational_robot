@@ -20,6 +20,15 @@ AI_BINARY_DIR:STATIC=/home/ros/chenxu/educational_robot/build/AI
 //Value Computed by CMake
 AI_SOURCE_DIR:STATIC=/home/ros/chenxu/educational_robot/src/AI
 
+//The directory containing a CMake configuration file for ALSA.
+ALSA_DIR:PATH=ALSA_DIR-NOTFOUND
+
+//The ALSA (asound) include directory
+ALSA_INCLUDE_DIR:PATH=/usr/include
+
+//The ALSA (asound) library
+ALSA_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libasound.so
+
 //Builds the googlemock subproject
 BUILD_GMOCK:BOOL=ON
 
@@ -346,6 +355,12 @@ gtest_hide_internal_symbols:BOOL=OFF
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
 //Value Computed by CMake
+hello_BINARY_DIR:STATIC=/home/ros/chenxu/educational_robot/build/hello
+
+//Value Computed by CMake
+hello_SOURCE_DIR:STATIC=/home/ros/chenxu/educational_robot/src/hello
+
+//Value Computed by CMake
 language_BINARY_DIR:STATIC=/home/ros/chenxu/educational_robot/build/language
 
 //Value Computed by CMake
@@ -395,6 +410,10 @@ xmlrpcpp_DIR:PATH=/opt/ros/melodic/share/xmlrpcpp/cmake
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: ALSA_INCLUDE_DIR
+ALSA_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ALSA_LIBRARY
+ALSA_LIBRARY-ADVANCED:INTERNAL=1
 //catkin environment
 CATKIN_ENV:INTERNAL=/home/ros/chenxu/educational_robot/build/catkin_generated/env_cached.sh
 CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/ros/chenxu/educational_robot/build/test_results
@@ -500,7 +519,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -541,6 +560,8 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding ALSA
+FIND_PACKAGE_MESSAGE_DETAILS_ALSA:INTERNAL=[/usr/lib/x86_64-linux-gnu/libasound.so][/usr/include][v1.1.3()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python2][v2.7.17()]
 //Details about finding Threads

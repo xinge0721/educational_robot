@@ -492,6 +492,32 @@ std_msgs_generate_messages_py/fast:
 	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_py.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_py.dir/build
 .PHONY : std_msgs_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named woder
+
+# Build rule for target.
+woder: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 woder
+.PHONY : woder
+
+# fast build rule for target.
+woder/fast:
+	$(MAKE) -f hello/CMakeFiles/woder.dir/build.make hello/CMakeFiles/woder.dir/build
+.PHONY : woder/fast
+
+#=============================================================================
+# Target rules for targets named xf_asr
+
+# Build rule for target.
+xf_asr: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 xf_asr
+.PHONY : xf_asr
+
+# fast build rule for target.
+xf_asr/fast:
+	$(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/build
+.PHONY : xf_asr/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -530,6 +556,8 @@ help:
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_py"
+	@echo "... woder"
+	@echo "... xf_asr"
 .PHONY : help
 
 

@@ -955,15 +955,70 @@ clean: AI/CMakeFiles/std_msgs_generate_messages_py.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Directory level rules for directory hello
+
+# Convenience name for "all" pass in the directory.
+hello/all: hello/CMakeFiles/woder.dir/all
+
+.PHONY : hello/all
+
+# Convenience name for "clean" pass in the directory.
+hello/clean: hello/CMakeFiles/woder.dir/clean
+
+.PHONY : hello/clean
+
+# Convenience name for "preinstall" pass in the directory.
+hello/preinstall:
+
+.PHONY : hello/preinstall
+
+#=============================================================================
+# Target rules for target hello/CMakeFiles/woder.dir
+
+# All Build rule for target.
+hello/CMakeFiles/woder.dir/all:
+	$(MAKE) -f hello/CMakeFiles/woder.dir/build.make hello/CMakeFiles/woder.dir/depend
+	$(MAKE) -f hello/CMakeFiles/woder.dir/build.make hello/CMakeFiles/woder.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=14,15 "Built target woder"
+.PHONY : hello/CMakeFiles/woder.dir/all
+
+# Include target in all.
+all: hello/CMakeFiles/woder.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+hello/CMakeFiles/woder.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/woder.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : hello/CMakeFiles/woder.dir/rule
+
+# Convenience name for target.
+woder: hello/CMakeFiles/woder.dir/rule
+
+.PHONY : woder
+
+# clean rule for target.
+hello/CMakeFiles/woder.dir/clean:
+	$(MAKE) -f hello/CMakeFiles/woder.dir/build.make hello/CMakeFiles/woder.dir/clean
+.PHONY : hello/CMakeFiles/woder.dir/clean
+
+# clean rule for target.
+clean: hello/CMakeFiles/woder.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
 # Directory level rules for directory language
 
 # Convenience name for "all" pass in the directory.
-language/all:
+language/all: language/CMakeFiles/xf_asr.dir/all
 
 .PHONY : language/all
 
 # Convenience name for "clean" pass in the directory.
-language/clean:
+language/clean: language/CMakeFiles/xf_asr.dir/clean
 
 .PHONY : language/clean
 
@@ -971,6 +1026,43 @@ language/clean:
 language/preinstall:
 
 .PHONY : language/preinstall
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/xf_asr.dir
+
+# All Build rule for target.
+language/CMakeFiles/xf_asr.dir/all:
+	$(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/depend
+	$(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=16,17,18,19 "Built target xf_asr"
+.PHONY : language/CMakeFiles/xf_asr.dir/all
+
+# Include target in all.
+all: language/CMakeFiles/xf_asr.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/xf_asr.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 4
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/xf_asr.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/xf_asr.dir/rule
+
+# Convenience name for target.
+xf_asr: language/CMakeFiles/xf_asr.dir/rule
+
+.PHONY : xf_asr
+
+# clean rule for target.
+language/CMakeFiles/xf_asr.dir/clean:
+	$(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/clean
+.PHONY : language/CMakeFiles/xf_asr.dir/clean
+
+# clean rule for target.
+clean: language/CMakeFiles/xf_asr.dir/clean
+
+.PHONY : clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

@@ -15,11 +15,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "catkin/catkin_generated/version/package.cmake"
   "catkin_generated/installspace/_setup_util.py"
   "catkin_generated/order_packages.cmake"
+  "hello/catkin_generated/ordered_paths.cmake"
+  "hello/catkin_generated/package.cmake"
   "language/catkin_generated/ordered_paths.cmake"
   "language/catkin_generated/package.cmake"
   "/home/ros/chenxu/educational_robot/src/AI/CMakeLists.txt"
   "/home/ros/chenxu/educational_robot/src/AI/package.xml"
   "/home/ros/chenxu/educational_robot/src/CMakeLists.txt"
+  "/home/ros/chenxu/educational_robot/src/hello/CMakeLists.txt"
+  "/home/ros/chenxu/educational_robot/src/hello/package.xml"
   "/home/ros/chenxu/educational_robot/src/language/CMakeLists.txt"
   "/home/ros/chenxu/educational_robot/src/language/package.xml"
   "/opt/ros/melodic/share/catkin/cmake/../package.xml"
@@ -123,6 +127,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.10/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.10/Modules/Compiler/GNU.cmake"
   "/usr/share/cmake-3.10/Modules/DartConfiguration.tcl.in"
+  "/usr/share/cmake-3.10/Modules/FindALSA.cmake"
   "/usr/share/cmake-3.10/Modules/FindGTest.cmake"
   "/usr/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-3.10/Modules/FindPackageMessage.cmake"
@@ -179,6 +184,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "gtest/googlemock/CMakeFiles/CMakeDirectoryInformation.cmake"
   "gtest/googlemock/gtest/CMakeFiles/CMakeDirectoryInformation.cmake"
   "AI/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "hello/CMakeFiles/CMakeDirectoryInformation.cmake"
   "language/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
@@ -209,4 +215,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/DependInfo.cmake"
   "AI/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake"
+  "hello/CMakeFiles/woder.dir/DependInfo.cmake"
+  "language/CMakeFiles/xf_asr.dir/DependInfo.cmake"
   )

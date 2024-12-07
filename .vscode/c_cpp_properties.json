@@ -8,8 +8,8 @@
             "includePath": [
                 "/opt/ros/melodic/include/**",
                 "/usr/include/**",
-                "${workspaceFolder}/src/voice/include/**",
-                "${workspaceFolder}/src/voice/include/voice/**"
+                "${workspaceFolder}/src/language/include/**",
+                "${workspaceFolder}/src/language/include/language/**"
             ],
             "name": "ROS",
             "intelliSenseMode": "gcc-x64",
