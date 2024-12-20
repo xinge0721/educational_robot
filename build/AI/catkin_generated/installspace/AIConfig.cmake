@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/ros/chenxu/educational_robot/install/lib;/opt/ros/melodic/lib)
+    foreach(path /home/ros/chenxu/educational_robot/install/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(AI_LIBRARIES ${AI_LIBRARIES})
 
   _list_append_unique(AI_LIBRARY_DIRS ${${AI_dep}_LIBRARY_DIRS})
-  list(APPEND AI_EXPORTED_TARGETS ${${AI_dep}_EXPORTED_TARGETS})
+  _list_append_deduplicate(AI_EXPORTED_TARGETS ${${AI_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

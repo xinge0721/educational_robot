@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/wenda.dir/src/wenda.cpp.o"
-  "/home/ros/chenxu/educational_robot/devel/lib/AI/wenda.pdb"
   "/home/ros/chenxu/educational_robot/devel/lib/AI/wenda"
+  "/home/ros/chenxu/educational_robot/devel/lib/AI/wenda.pdb"
+  "CMakeFiles/wenda.dir/src/wenda.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.
