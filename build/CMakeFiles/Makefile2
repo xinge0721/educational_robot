@@ -54,17 +54,15 @@ CMAKE_BINARY_DIR = /home/ros/chenxu/educational_robot/build
 
 # The main recursive "all" target.
 all: gtest/all
-all: AI/all
-all: hello/all
 all: language/all
+all: xinhuo/all
 
 .PHONY : all
 
 # The main recursive "preinstall" target.
 preinstall: gtest/preinstall
-preinstall: AI/preinstall
-preinstall: hello/preinstall
 preinstall: language/preinstall
+preinstall: xinhuo/preinstall
 
 .PHONY : preinstall
 
@@ -75,44 +73,10 @@ clean: CMakeFiles/clean_test_results.dir/clean
 clean: CMakeFiles/tests.dir/clean
 clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
-clean: AI/clean
-clean: hello/clean
 clean: language/clean
+clean: xinhuo/clean
 
 .PHONY : clean
-
-#=============================================================================
-# Directory level rules for directory AI
-
-# Recursive "all" directory target.
-AI/all: AI/CMakeFiles/wenda.dir/all
-
-.PHONY : AI/all
-
-# Recursive "preinstall" directory target.
-AI/preinstall:
-
-.PHONY : AI/preinstall
-
-# Recursive "clean" directory target.
-AI/clean: AI/CMakeFiles/wenda.dir/clean
-AI/clean: AI/CMakeFiles/std_msgs_generate_messages_py.dir/clean
-AI/clean: AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-AI/clean: AI/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-AI/clean: AI/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-AI/clean: AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-AI/clean: AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-AI/clean: AI/CMakeFiles/roscpp_generate_messages_py.dir/clean
-AI/clean: AI/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-AI/clean: AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-AI/clean: AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-AI/clean: AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-AI/clean: AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-AI/clean: AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-AI/clean: AI/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-AI/clean: AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-
-.PHONY : AI/clean
 
 #=============================================================================
 # Directory level rules for directory gtest
@@ -172,24 +136,6 @@ gtest/googletest/clean: gtest/googletest/CMakeFiles/gtest.dir/clean
 .PHONY : gtest/googletest/clean
 
 #=============================================================================
-# Directory level rules for directory hello
-
-# Recursive "all" directory target.
-hello/all: hello/CMakeFiles/woder.dir/all
-
-.PHONY : hello/all
-
-# Recursive "preinstall" directory target.
-hello/preinstall:
-
-.PHONY : hello/preinstall
-
-# Recursive "clean" directory target.
-hello/clean: hello/CMakeFiles/woder.dir/clean
-
-.PHONY : hello/clean
-
-#=============================================================================
 # Directory level rules for directory language
 
 # Recursive "all" directory target.
@@ -204,8 +150,41 @@ language/preinstall:
 
 # Recursive "clean" directory target.
 language/clean: language/CMakeFiles/xf_asr.dir/clean
+language/clean: language/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+language/clean: language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+language/clean: language/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+language/clean: language/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+language/clean: language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+language/clean: language/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+language/clean: language/CMakeFiles/roscpp_generate_messages_py.dir/clean
+language/clean: language/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+language/clean: language/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+language/clean: language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+language/clean: language/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+language/clean: language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+language/clean: language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+language/clean: language/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+language/clean: language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 
 .PHONY : language/clean
+
+#=============================================================================
+# Directory level rules for directory xinhuo
+
+# Recursive "all" directory target.
+xinhuo/all:
+
+.PHONY : xinhuo/all
+
+# Recursive "preinstall" directory target.
+xinhuo/preinstall:
+
+.PHONY : xinhuo/preinstall
+
+# Recursive "clean" directory target.
+xinhuo/clean:
+
+.PHONY : xinhuo/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir
@@ -346,8 +325,8 @@ CMakeFiles/download_extra_data.dir/clean:
 # Target rules for target gtest/googlemock/CMakeFiles/gmock_main.dir
 
 # All Build rule for target.
-gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googlemock/CMakeFiles/gmock.dir/all
 gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
+gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googlemock/CMakeFiles/gmock.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=3,4 "Built target gmock_main"
@@ -452,472 +431,13 @@ gtest/googletest/CMakeFiles/gtest.dir/clean:
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/clean
 
 #=============================================================================
-# Target rules for target AI/CMakeFiles/wenda.dir
-
-# All Build rule for target.
-AI/CMakeFiles/wenda.dir/all:
-	$(MAKE) -f AI/CMakeFiles/wenda.dir/build.make AI/CMakeFiles/wenda.dir/depend
-	$(MAKE) -f AI/CMakeFiles/wenda.dir/build.make AI/CMakeFiles/wenda.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=9,10 "Built target wenda"
-.PHONY : AI/CMakeFiles/wenda.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/wenda.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/wenda.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/wenda.dir/rule
-
-# Convenience name for target.
-wenda: AI/CMakeFiles/wenda.dir/rule
-
-.PHONY : wenda
-
-# clean rule for target.
-AI/CMakeFiles/wenda.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/wenda.dir/build.make AI/CMakeFiles/wenda.dir/clean
-.PHONY : AI/CMakeFiles/wenda.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/std_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-AI/CMakeFiles/std_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_py.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_py.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_py"
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/std_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/std_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: AI/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# clean rule for target.
-AI/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_py.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_py.dir/clean
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_nodejs"
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_nodejs: AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : std_msgs_generate_messages_nodejs
-
-# clean rule for target.
-AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/roscpp_generate_messages_cpp.dir
-
-# All Build rule for target.
-AI/CMakeFiles/roscpp_generate_messages_cpp.dir/all:
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make AI/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make AI/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_cpp"
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/roscpp_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/roscpp_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: AI/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# clean rule for target.
-AI/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make AI/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/roscpp_generate_messages_eus.dir
-
-# All Build rule for target.
-AI/CMakeFiles/roscpp_generate_messages_eus.dir/all:
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_eus.dir/build.make AI/CMakeFiles/roscpp_generate_messages_eus.dir/depend
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_eus.dir/build.make AI/CMakeFiles/roscpp_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_eus"
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/roscpp_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/roscpp_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_eus: AI/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-
-.PHONY : roscpp_generate_messages_eus
-
-# clean rule for target.
-AI/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_eus.dir/build.make AI/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir
-
-# All Build rule for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all:
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_nodejs"
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# clean rule for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/std_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_lisp"
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# clean rule for target.
-AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/roscpp_generate_messages_py.dir
-
-# All Build rule for target.
-AI/CMakeFiles/roscpp_generate_messages_py.dir/all:
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_py.dir/build.make AI/CMakeFiles/roscpp_generate_messages_py.dir/depend
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_py.dir/build.make AI/CMakeFiles/roscpp_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_py"
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/roscpp_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/roscpp_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: AI/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# clean rule for target.
-AI/CMakeFiles/roscpp_generate_messages_py.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_py.dir/build.make AI/CMakeFiles/roscpp_generate_messages_py.dir/clean
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/std_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-AI/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_eus"
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/std_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: AI/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# clean rule for target.
-AI/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/roscpp_generate_messages_nodejs.dir
-
-# All Build rule for target.
-AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/all:
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_nodejs"
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# clean rule for target.
-AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_cpp"
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# clean rule for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/std_msgs_generate_messages_cpp.dir
-
-# All Build rule for target.
-AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_cpp"
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# clean rule for target.
-AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-.PHONY : AI/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
-
-# All Build rule for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all:
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/depend
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_eus"
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# clean rule for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
-
-# All Build rule for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all:
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_lisp"
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# clean rule for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/roscpp_generate_messages_lisp.dir
-
-# All Build rule for target.
-AI/CMakeFiles/roscpp_generate_messages_lisp.dir/all:
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make AI/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make AI/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_lisp"
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/roscpp_generate_messages_lisp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: AI/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# clean rule for target.
-AI/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make AI/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-.PHONY : AI/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
-
-#=============================================================================
-# Target rules for target AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
-
-# All Build rule for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all:
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_py"
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-
-# Build rule for subdir invocation for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# clean rule for target.
-AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
-	$(MAKE) -f AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-.PHONY : AI/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
-
-#=============================================================================
-# Target rules for target hello/CMakeFiles/woder.dir
-
-# All Build rule for target.
-hello/CMakeFiles/woder.dir/all:
-	$(MAKE) -f hello/CMakeFiles/woder.dir/build.make hello/CMakeFiles/woder.dir/depend
-	$(MAKE) -f hello/CMakeFiles/woder.dir/build.make hello/CMakeFiles/woder.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=11,12 "Built target woder"
-.PHONY : hello/CMakeFiles/woder.dir/all
-
-# Build rule for subdir invocation for target.
-hello/CMakeFiles/woder.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 hello/CMakeFiles/woder.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : hello/CMakeFiles/woder.dir/rule
-
-# Convenience name for target.
-woder: hello/CMakeFiles/woder.dir/rule
-
-.PHONY : woder
-
-# clean rule for target.
-hello/CMakeFiles/woder.dir/clean:
-	$(MAKE) -f hello/CMakeFiles/woder.dir/build.make hello/CMakeFiles/woder.dir/clean
-.PHONY : hello/CMakeFiles/woder.dir/clean
-
-#=============================================================================
 # Target rules for target language/CMakeFiles/xf_asr.dir
 
 # All Build rule for target.
 language/CMakeFiles/xf_asr.dir/all:
 	$(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/depend
 	$(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=13,14,15,16 "Built target xf_asr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=9,10,11,12 "Built target xf_asr"
 .PHONY : language/CMakeFiles/xf_asr.dir/all
 
 # Build rule for subdir invocation for target.
@@ -936,6 +456,411 @@ xf_asr: language/CMakeFiles/xf_asr.dir/rule
 language/CMakeFiles/xf_asr.dir/clean:
 	$(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/clean
 .PHONY : language/CMakeFiles/xf_asr.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/std_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+language/CMakeFiles/std_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_py.dir/build.make language/CMakeFiles/std_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_py.dir/build.make language/CMakeFiles/std_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_py"
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/std_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/std_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_py: language/CMakeFiles/std_msgs_generate_messages_py.dir/rule
+
+.PHONY : std_msgs_generate_messages_py
+
+# clean rule for target.
+language/CMakeFiles/std_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_py.dir/build.make language/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_py.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/std_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_nodejs"
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_nodejs: language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : std_msgs_generate_messages_nodejs
+
+# clean rule for target.
+language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/roscpp_generate_messages_cpp.dir
+
+# All Build rule for target.
+language/CMakeFiles/roscpp_generate_messages_cpp.dir/all:
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make language/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make language/CMakeFiles/roscpp_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_cpp"
+.PHONY : language/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/roscpp_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/roscpp_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_cpp: language/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
+
+.PHONY : roscpp_generate_messages_cpp
+
+# clean rule for target.
+language/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make language/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+.PHONY : language/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/roscpp_generate_messages_eus.dir
+
+# All Build rule for target.
+language/CMakeFiles/roscpp_generate_messages_eus.dir/all:
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_eus.dir/build.make language/CMakeFiles/roscpp_generate_messages_eus.dir/depend
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_eus.dir/build.make language/CMakeFiles/roscpp_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_eus"
+.PHONY : language/CMakeFiles/roscpp_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/roscpp_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/roscpp_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: language/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# clean rule for target.
+language/CMakeFiles/roscpp_generate_messages_eus.dir/clean:
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_eus.dir/build.make language/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+.PHONY : language/CMakeFiles/roscpp_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir
+
+# All Build rule for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all:
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/depend
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_nodejs"
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_nodejs: language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_nodejs
+
+# clean rule for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/std_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+language/CMakeFiles/std_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make language/CMakeFiles/std_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make language/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_lisp"
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/std_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_lisp: language/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : std_msgs_generate_messages_lisp
+
+# clean rule for target.
+language/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make language/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/roscpp_generate_messages_py.dir
+
+# All Build rule for target.
+language/CMakeFiles/roscpp_generate_messages_py.dir/all:
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_py.dir/build.make language/CMakeFiles/roscpp_generate_messages_py.dir/depend
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_py.dir/build.make language/CMakeFiles/roscpp_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_py"
+.PHONY : language/CMakeFiles/roscpp_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/roscpp_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/roscpp_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_py: language/CMakeFiles/roscpp_generate_messages_py.dir/rule
+
+.PHONY : roscpp_generate_messages_py
+
+# clean rule for target.
+language/CMakeFiles/roscpp_generate_messages_py.dir/clean:
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_py.dir/build.make language/CMakeFiles/roscpp_generate_messages_py.dir/clean
+.PHONY : language/CMakeFiles/roscpp_generate_messages_py.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/std_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+language/CMakeFiles/std_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make language/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make language/CMakeFiles/std_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_eus"
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/std_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/std_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_eus: language/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
+
+.PHONY : std_msgs_generate_messages_eus
+
+# clean rule for target.
+language/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make language/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/roscpp_generate_messages_nodejs.dir
+
+# All Build rule for target.
+language/CMakeFiles/roscpp_generate_messages_nodejs.dir/all:
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make language/CMakeFiles/roscpp_generate_messages_nodejs.dir/depend
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make language/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_nodejs"
+.PHONY : language/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/roscpp_generate_messages_nodejs.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_nodejs: language/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
+
+.PHONY : roscpp_generate_messages_nodejs
+
+# clean rule for target.
+language/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean:
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make language/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+.PHONY : language/CMakeFiles/roscpp_generate_messages_nodejs.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_cpp"
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_cpp: language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_cpp
+
+# clean rule for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/std_msgs_generate_messages_cpp.dir
+
+# All Build rule for target.
+language/CMakeFiles/std_msgs_generate_messages_cpp.dir/all:
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make language/CMakeFiles/std_msgs_generate_messages_cpp.dir/depend
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make language/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target std_msgs_generate_messages_cpp"
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/std_msgs_generate_messages_cpp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+std_msgs_generate_messages_cpp: language/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
+
+.PHONY : std_msgs_generate_messages_cpp
+
+# clean rule for target.
+language/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean:
+	$(MAKE) -f language/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make language/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+.PHONY : language/CMakeFiles/std_msgs_generate_messages_cpp.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir
+
+# All Build rule for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all:
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/depend
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_eus"
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_eus: language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_eus
+
+# clean rule for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean:
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir
+
+# All Build rule for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all:
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/depend
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_lisp"
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_lisp: language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_lisp
+
+# clean rule for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean:
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/roscpp_generate_messages_lisp.dir
+
+# All Build rule for target.
+language/CMakeFiles/roscpp_generate_messages_lisp.dir/all:
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make language/CMakeFiles/roscpp_generate_messages_lisp.dir/depend
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make language/CMakeFiles/roscpp_generate_messages_lisp.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target roscpp_generate_messages_lisp"
+.PHONY : language/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/roscpp_generate_messages_lisp.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/roscpp_generate_messages_lisp.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_lisp: language/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
+
+.PHONY : roscpp_generate_messages_lisp
+
+# clean rule for target.
+language/CMakeFiles/roscpp_generate_messages_lisp.dir/clean:
+	$(MAKE) -f language/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make language/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+.PHONY : language/CMakeFiles/roscpp_generate_messages_lisp.dir/clean
+
+#=============================================================================
+# Target rules for target language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir
+
+# All Build rule for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all:
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/depend
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num= "Built target rosgraph_msgs_generate_messages_py"
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+
+# Build rule for subdir invocation for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+	$(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_py: language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_py
+
+# clean rule for target.
+language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean:
+	$(MAKE) -f language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
+.PHONY : language/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
