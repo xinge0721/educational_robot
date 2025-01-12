@@ -1,2 +1,2 @@
-fastgpt:language:xinhuo
+fastGPT:language:xinhuo
 -DCATKIN_DEVEL_PREFIX=/home/ros/chenxu/educational_robot/devel -DCMAKE_INSTALL_PREFIX=/home/ros/chenxu/educational_robot/install -G Unix Makefiles
