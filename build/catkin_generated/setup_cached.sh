@@ -12,5 +12,6 @@ export LD_LIBRARY_PATH="/home/ros/chenxu/educational_robot/devel/lib:$LD_LIBRARY
 export PATH='/opt/ros/noetic/bin:/home/ros/.local/bin:/home/ros/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'
 export PKG_CONFIG_PATH="/home/ros/chenxu/educational_robot/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/ros/chenxu/educational_robot/build'
+export PYTHONPATH="/home/ros/chenxu/educational_robot/devel/lib/python3/dist-packages:$PYTHONPATH"
 export ROSLISP_PACKAGE_DIRECTORIES='/home/ros/chenxu/educational_robot/devel/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/ros/chenxu/educational_robot/src:$ROS_PACKAGE_PATH"
