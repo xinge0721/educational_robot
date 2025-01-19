@@ -7,5 +7,6 @@
 subdirs("gtest")
 subdirs("fastGPT")
 subdirs("language")
+subdirs("main")
 subdirs("xf_mic_asr_offline_line")
 subdirs("xinhuo")

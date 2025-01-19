@@ -65,6 +65,13 @@
 /home/ros/chenxu/educational_robot/build/language/CMakeFiles/edit_cache.dir
 /home/ros/chenxu/educational_robot/build/language/CMakeFiles/test.dir
 /home/ros/chenxu/educational_robot/build/language/CMakeFiles/xf_asr.dir
+/home/ros/chenxu/educational_robot/build/main/CMakeFiles/install/strip.dir
+/home/ros/chenxu/educational_robot/build/main/CMakeFiles/install/local.dir
+/home/ros/chenxu/educational_robot/build/main/CMakeFiles/install.dir
+/home/ros/chenxu/educational_robot/build/main/CMakeFiles/list_install_components.dir
+/home/ros/chenxu/educational_robot/build/main/CMakeFiles/rebuild_cache.dir
+/home/ros/chenxu/educational_robot/build/main/CMakeFiles/edit_cache.dir
+/home/ros/chenxu/educational_robot/build/main/CMakeFiles/test.dir
 /home/ros/chenxu/educational_robot/build/xf_mic_asr_offline_line/CMakeFiles/install/strip.dir
 /home/ros/chenxu/educational_robot/build/xf_mic_asr_offline_line/CMakeFiles/install/local.dir
 /home/ros/chenxu/educational_robot/build/xf_mic_asr_offline_line/CMakeFiles/install.dir

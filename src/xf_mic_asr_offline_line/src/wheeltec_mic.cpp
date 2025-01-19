@@ -280,6 +280,8 @@ int main(int argc, char** argv)
     voice_words_pub = node.advertise<std_msgs::String>(voice_words, 1);  // 发布语音内容
     pub_awake_angle = node.advertise<std_msgs::Int32>(awake_angle_topic, 1);  // 发布唤醒角度
 
+    ros::Publisher pub_awake_language = node.advertise<std_msgs::String>("voiceWakeup", 10);//语音识别标志位
+
     ros::NodeHandle private_n("~");  // 创建私有命名空间句柄
     private_n.param<std::string>("usart_port_name", usart_port_name, "/dev/wheeltec_mic");  // 获取串口设备名称
 
@@ -332,6 +334,7 @@ int main(int argc, char** argv)
             msg.data = "小车唤醒";
             
             voice_words_pub.publish(msg);  // 发布语音内容
+            pub_awake_language.publish(msg);  // 发布语音内容
 
             sleep(0.8);  // 延时
             if_awake = 0;  // 重置唤醒标志位

@@ -56,6 +56,7 @@ CMAKE_BINARY_DIR = /home/ros/chenxu/educational_robot/build
 all: gtest/all
 all: fastGPT/all
 all: language/all
+all: main/all
 all: xf_mic_asr_offline_line/all
 all: xinhuo/all
 
@@ -65,6 +66,7 @@ all: xinhuo/all
 preinstall: gtest/preinstall
 preinstall: fastGPT/preinstall
 preinstall: language/preinstall
+preinstall: main/preinstall
 preinstall: xf_mic_asr_offline_line/preinstall
 preinstall: xinhuo/preinstall
 
@@ -79,6 +81,7 @@ clean: CMakeFiles/download_extra_data.dir/clean
 clean: gtest/clean
 clean: fastGPT/clean
 clean: language/clean
+clean: main/clean
 clean: xf_mic_asr_offline_line/clean
 clean: xinhuo/clean
 
@@ -190,6 +193,24 @@ language/preinstall:
 language/clean: language/CMakeFiles/xf_asr.dir/clean
 
 .PHONY : language/clean
+
+#=============================================================================
+# Directory level rules for directory main
+
+# Recursive "all" directory target.
+main/all:
+
+.PHONY : main/all
+
+# Recursive "preinstall" directory target.
+main/preinstall:
+
+.PHONY : main/preinstall
+
+# Recursive "clean" directory target.
+main/clean:
+
+.PHONY : main/clean
 
 #=============================================================================
 # Directory level rules for directory xf_mic_asr_offline_line

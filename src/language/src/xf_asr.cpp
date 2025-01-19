@@ -179,7 +179,7 @@ int main(int argc, char* argv[])
     while(ros::ok())  // ROS主循环
     {
         // 语音识别唤醒
-        if (1){  // 如果唤醒标志为1
+        if (wakeupFlag){  // 如果唤醒标志为1
             ROS_INFO("Wakeup...");  // 打印唤醒提示
             int ret = MSP_SUCCESS;
             const char* login_params = "appid = 68a31b42, work_dir = .";  // 登录参数
