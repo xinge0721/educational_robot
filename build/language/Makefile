@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+language/CMakeFiles/mic.dir/rule:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/mic.dir/rule
+.PHONY : language/CMakeFiles/mic.dir/rule
+
+# Convenience name for target.
+mic: language/CMakeFiles/mic.dir/rule
+
+.PHONY : mic
+
+# fast build rule for target.
+mic/fast:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/mic.dir/build.make language/CMakeFiles/mic.dir/build
+.PHONY : mic/fast
+
+# Convenience name for target.
 language/CMakeFiles/xf_asr.dir/rule:
 	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/xf_asr.dir/rule
 .PHONY : language/CMakeFiles/xf_asr.dir/rule
@@ -208,6 +223,33 @@ src/linuxrec.s: src/linuxrec.cpp.s
 src/linuxrec.cpp.s:
 	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.s
 .PHONY : src/linuxrec.cpp.s
+
+src/mic.o: src/mic.cpp.o
+
+.PHONY : src/mic.o
+
+# target to build an object file
+src/mic.cpp.o:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/mic.dir/build.make language/CMakeFiles/mic.dir/src/mic.cpp.o
+.PHONY : src/mic.cpp.o
+
+src/mic.i: src/mic.cpp.i
+
+.PHONY : src/mic.i
+
+# target to preprocess a source file
+src/mic.cpp.i:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/mic.dir/build.make language/CMakeFiles/mic.dir/src/mic.cpp.i
+.PHONY : src/mic.cpp.i
+
+src/mic.s: src/mic.cpp.s
+
+.PHONY : src/mic.s
+
+# target to generate assembly for a file
+src/mic.cpp.s:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/mic.dir/build.make language/CMakeFiles/mic.dir/src/mic.cpp.s
+.PHONY : src/mic.cpp.s
 
 src/speech_recognizer.o: src/speech_recognizer.cpp.o
 
@@ -276,10 +318,14 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... mic"
 	@echo "... xf_asr"
 	@echo "... src/linuxrec.o"
 	@echo "... src/linuxrec.i"
 	@echo "... src/linuxrec.s"
+	@echo "... src/mic.o"
+	@echo "... src/mic.i"
+	@echo "... src/mic.s"
 	@echo "... src/speech_recognizer.o"
 	@echo "... src/speech_recognizer.i"
 	@echo "... src/speech_recognizer.s"

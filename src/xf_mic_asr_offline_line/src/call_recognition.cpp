@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
 
 			if(get_offline_recognise_result_client.call(GetOfflineResult_srv))    //请求离线命令词识别服务并返回应答为调用成功
 			{
-				//ROS_INFO("succeed to call service \"get_offline_recognise_result_srv\"!");    //打印识别结果、置信度、识别命令词等信息
+				ROS_INFO("succeed to call service \"get_offline_recognise_result_srv\"!");    //打印识别结果、置信度、识别命令词等信息
 				std::cout << "result: " << GetOfflineResult_srv.response.result << endl;
 				std::cout << "fail reason: " << GetOfflineResult_srv.response.fail_reason << endl;
 				std::cout << "text: " << GetOfflineResult_srv.response.text << endl;

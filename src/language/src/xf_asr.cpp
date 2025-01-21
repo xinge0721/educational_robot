@@ -150,7 +150,7 @@ void WakeUp(const std_msgs::String::ConstPtr& msg)
 {
     printf("waking up\r\n");  // 打印唤醒提示
     usleep(700*1000);  // 延迟700ms
-    wakeupFlag=1;  // 设置唤醒标志
+    wakeupFlag = !wakeupFlag;  // 设置唤醒标志
 }
 
 

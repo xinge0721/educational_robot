@@ -480,6 +480,19 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named mic
+
+# Build rule for target.
+mic: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 mic
+.PHONY : mic
+
+# fast build rule for target.
+mic/fast:
+	$(MAKE) -f language/CMakeFiles/mic.dir/build.make language/CMakeFiles/mic.dir/build
+.PHONY : mic/fast
+
+#=============================================================================
 # Target rules for targets named xf_asr
 
 # Build rule for target.
@@ -1244,6 +1257,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... mic"
 	@echo "... xf_asr"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_cpp"

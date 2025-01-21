@@ -138,9 +138,9 @@ include
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(xf_asr src/xf_asr.cpp
-                                                src/speech_recognizer.cpp
-                                                src/linuxrec.cpp)
-
+                      src/speech_recognizer.cpp
+                      src/linuxrec.cpp)
+add_executable(mic src/mic.cpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -156,7 +156,12 @@ target_link_libraries(xf_asr
   ${catkin_LIBRARIES}
   /usr/lib/libmsc.so
   ${ALSA_LIBRARIES}
-
+)
+target_link_libraries(mic
+  ${catkin_LIBRARIES}
+  /usr/lib/libmsc.so
+  ${ALSA_LIBRARIES}
+   -ljsoncpp 
 )
 
 #############

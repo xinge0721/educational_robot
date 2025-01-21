@@ -290,6 +290,7 @@ set(CMAKE_DEPEND_INFO_FILES
   "fastGPT/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/DependInfo.cmake"
   "fastGPT/CMakeFiles/roscpp_generate_messages_lisp.dir/DependInfo.cmake"
   "fastGPT/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/DependInfo.cmake"
+  "language/CMakeFiles/mic.dir/DependInfo.cmake"
   "language/CMakeFiles/xf_asr.dir/DependInfo.cmake"
   "xf_mic_asr_offline_line/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/DependInfo.cmake"
   "xf_mic_asr_offline_line/CMakeFiles/tf2_msgs_generate_messages_cpp.dir/DependInfo.cmake"
