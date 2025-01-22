@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+language/CMakeFiles/tts.dir/rule:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/tts.dir/rule
+.PHONY : language/CMakeFiles/tts.dir/rule
+
+# Convenience name for target.
+tts: language/CMakeFiles/tts.dir/rule
+
+.PHONY : tts
+
+# fast build rule for target.
+tts/fast:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/tts.dir/build.make language/CMakeFiles/tts.dir/build
+.PHONY : tts/fast
+
+# Convenience name for target.
 language/CMakeFiles/mic.dir/rule:
 	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/mic.dir/rule
 .PHONY : language/CMakeFiles/mic.dir/rule
@@ -278,6 +293,33 @@ src/speech_recognizer.cpp.s:
 	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.s
 .PHONY : src/speech_recognizer.cpp.s
 
+src/tts.o: src/tts.cpp.o
+
+.PHONY : src/tts.o
+
+# target to build an object file
+src/tts.cpp.o:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/tts.dir/build.make language/CMakeFiles/tts.dir/src/tts.cpp.o
+.PHONY : src/tts.cpp.o
+
+src/tts.i: src/tts.cpp.i
+
+.PHONY : src/tts.i
+
+# target to preprocess a source file
+src/tts.cpp.i:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/tts.dir/build.make language/CMakeFiles/tts.dir/src/tts.cpp.i
+.PHONY : src/tts.cpp.i
+
+src/tts.s: src/tts.cpp.s
+
+.PHONY : src/tts.s
+
+# target to generate assembly for a file
+src/tts.cpp.s:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/tts.dir/build.make language/CMakeFiles/tts.dir/src/tts.cpp.s
+.PHONY : src/tts.cpp.s
+
 src/xf_asr.o: src/xf_asr.cpp.o
 
 .PHONY : src/xf_asr.o
@@ -316,6 +358,7 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... tts"
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... mic"
@@ -329,6 +372,9 @@ help:
 	@echo "... src/speech_recognizer.o"
 	@echo "... src/speech_recognizer.i"
 	@echo "... src/speech_recognizer.s"
+	@echo "... src/tts.o"
+	@echo "... src/tts.i"
+	@echo "... src/tts.s"
 	@echo "... src/xf_asr.o"
 	@echo "... src/xf_asr.i"
 	@echo "... src/xf_asr.s"

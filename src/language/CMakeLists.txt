@@ -141,6 +141,7 @@ add_executable(xf_asr src/xf_asr.cpp
                       src/speech_recognizer.cpp
                       src/linuxrec.cpp)
 add_executable(mic src/mic.cpp)
+add_executable(tts src/tts.cpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -163,7 +164,9 @@ target_link_libraries(mic
   ${ALSA_LIBRARIES}
    -ljsoncpp 
 )
-
+target_link_libraries(tts
+${catkin_LIBRARIES} msc rt dl pthread stdc++
+)
 #############
 ## Install ##
 #############
