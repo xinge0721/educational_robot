@@ -290,24 +290,32 @@ int main(int argc, char** argv)
     memset(buffer, 0, 1);  // 清空缓冲区
     const char* uartname = usart_port_name.c_str();  // 获取串口设备名称
 
-    // 打开串口设备
-    if ((fd = open_port(uartname)) < 0) {
-        printf("open %s is failed\n", uartname);
-        printf(">>>>>无法打开麦克风设备，尝试重新连接进行测试\n");
-        return 0;
-    } else {
-        set_opt(fd, 115200, 8, 'N', 1);  // 设置串口参数
-        printf(">>>>>成功打开麦克风设备\n");
-        printf(">>>>>唤醒词为:\"%s!\"\n", awake_words);
+    while(1)
+    {
+        // 打开串口设备
+        if ((fd = open_port(uartname)) < 0) {
+            printf("open %s is failed\n", uartname);
+            printf(">>>>>无法打开麦克风设备，尝试重新连接进行测试\n");
+        } 
+        else 
+        {
+            set_opt(fd, 115200, 8, 'N', 1);  // 设置串口参数
+            printf(">>>>>成功打开麦克风设备\n");
+            printf(">>>>>唤醒词为:\"%s!\"\n", awake_words);
 
-        // 发布麦克风设备状态标志位
-        for (int i = 0; i < 3; ++i) {
-            std_msgs::Int8 voice_flag_msg;
-            voice_flag_msg.data = 1;
-            voice_flag_pub.publish(voice_flag_msg);
-            sleep(1.0);
+            // 发布麦克风设备状态标志位
+            for (int i = 0; i < 3; ++i) {
+                std_msgs::Int8 voice_flag_msg;
+                voice_flag_msg.data = 1;
+                voice_flag_pub.publish(voice_flag_msg);
+                sleep(1.0);
+            }
+            break;//不断尝试，直到成功打开
         }
+        
     }
+
+    
 
     // 主循环
     while (ros::ok()) {

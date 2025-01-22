@@ -3,6 +3,7 @@
 
 language/CMakeFiles/mic.dir/src/mic.cpp.o
  /home/ros/chenxu/educational_robot/src/language/include/com_mic.h
+ /home/ros/chenxu/educational_robot/src/language/include/record.h
  /home/ros/chenxu/educational_robot/src/language/src/mic.cpp
  /opt/ros/noetic/include/ros/advertise_options.h
  /opt/ros/noetic/include/ros/advertise_service_options.h

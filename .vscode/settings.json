@@ -1,9 +1,9 @@
 {
     "python.autoComplete.extraPaths": [
-        "/opt/ros/melodic/lib/python2.7/dist-packages"
+        "/opt/ros/melodic/lib/python3/dist-packages"
     ],
     "python.analysis.extraPaths": [
-        "/opt/ros/melodic/lib/python2.7/dist-packages"
+        "/opt/ros/melodic/lib/python3/dist-packages"
     ],
     "files.associations": {
         "speech_recognizer.h": "c",
@@ -12,5 +12,6 @@
         "linuxrec.h": "c",
         "formats.h": "c",
         "msp_types.h": "c"
-    }
+    },
+    "C_Cpp.diagnostics.ignored": ["833"] // 忽略错误代码 833
 }

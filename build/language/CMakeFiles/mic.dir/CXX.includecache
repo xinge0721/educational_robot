@@ -32,6 +32,10 @@ cjson/cJSON.h
 pthread.h
 -
 
+/home/ros/chenxu/educational_robot/src/language/include/record.h
+alsa/asoundlib.h
+-
+
 /home/ros/chenxu/educational_robot/src/language/src/mic.cpp
 com_mic.h
 -
