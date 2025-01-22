@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/ros/chenxu/educational_robot/src/language/include/formats.h
+
+/home/ros/chenxu/educational_robot/src/language/include/linuxrec.h
+formats.h
+/home/ros/chenxu/educational_robot/src/language/include/formats.h
+
 /home/ros/chenxu/educational_robot/src/language/include/msp_cmn.h
 msp_types.h
 /home/ros/chenxu/educational_robot/src/language/include/msp_types.h
@@ -19,6 +25,46 @@ msp_types.h
 /home/ros/chenxu/educational_robot/src/language/include/msp_types.h
 
 /home/ros/chenxu/educational_robot/src/language/include/speech_recognizer.h
+
+/home/ros/chenxu/educational_robot/src/language/src/linuxrec.cpp
+stdio.h
+-
+stdlib.h
+-
+fcntl.h
+-
+alsa/asoundlib.h
+-
+signal.h
+-
+sys/stat.h
+-
+pthread.h
+-
+formats.h
+/home/ros/chenxu/educational_robot/src/language/src/formats.h
+linuxrec.h
+/home/ros/chenxu/educational_robot/src/language/src/linuxrec.h
+
+/home/ros/chenxu/educational_robot/src/language/src/speech_recognizer.cpp
+stdio.h
+-
+stdlib.h
+-
+unistd.h
+-
+string.h
+-
+speech_recognizer.h
+/home/ros/chenxu/educational_robot/src/language/src/speech_recognizer.h
+qisr.h
+/home/ros/chenxu/educational_robot/src/language/src/qisr.h
+msp_cmn.h
+/home/ros/chenxu/educational_robot/src/language/src/msp_cmn.h
+msp_errors.h
+/home/ros/chenxu/educational_robot/src/language/src/msp_errors.h
+linuxrec.h
+/home/ros/chenxu/educational_robot/src/language/src/linuxrec.h
 
 /home/ros/chenxu/educational_robot/src/language/src/xf_asr.cpp
 stdlib.h
