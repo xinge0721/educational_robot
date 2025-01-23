@@ -134,7 +134,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/ros/chenxu/educational_robot/build/fastGPT/cmake_install.cmake")
   include("/home/ros/chenxu/educational_robot/build/language/cmake_install.cmake")
   include("/home/ros/chenxu/educational_robot/build/main/cmake_install.cmake")
-  include("/home/ros/chenxu/educational_robot/build/tts_make/cmake_install.cmake")
   include("/home/ros/chenxu/educational_robot/build/xf_mic_asr_offline_line/cmake_install.cmake")
   include("/home/ros/chenxu/educational_robot/build/xinhuo/cmake_install.cmake")
 

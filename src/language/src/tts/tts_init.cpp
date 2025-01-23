@@ -1,23 +1,7 @@
-#include <ros/ros.h>  // ROS库，用于ROS节点的创建和管理
-#include <time.h>     // 时间库，用于获取当前时间
-#include "wav_head.h" // 自定义头文件，可能包含WAV文件头的定义
+#include "tts_init.h"
 
 using namespace std;  // 使用标准命名空间
 
-// 全局变量定义
-std::string source_path = "";  // 资源路径，用于指定资源文件的位置
-std::string appid = "";        // 应用程序ID，用于语音合成服务的认证
-std::string voice_name = "";   // 语音名称，指定合成语音的类型
-std::string tts_text = "";     // 待合成的文本
-int rdn;                       // 随机数参数，可能用于语音合成的随机化
-int volume;                    // 音量参数，控制合成语音的音量
-int pitch;                     // 音调参数，控制合成语音的音调
-int speed;                     // 语速参数，控制合成语音的语速
-int sample_rate;               // 采样率参数，控制合成语音的采样率
-const char* params_l;          // 登录参数，用于语音合成服务的登录
-const char* params_s;          // 会话参数，用于语音合成服务的会话
-const char* params_f;          // 文件参数，用于指定输出文件
-const char* params_t;          // 文本参数，用于指定待合成的文本
 
 // 将std::string转换为std::wstring
 std::wstring s2ws(const std::string &str)
@@ -65,19 +49,6 @@ char *join(std::string b, char *s2)
     return result;  // 返回拼接后的字符串
 }
 
-/* 获取当前时间并格式化为字符串 */
-std::string current_time()
-{
-    std::string fmt = ".wav";  // 文件扩展名
-    static char t_buf[64];     // 用于存储时间字符串的缓冲区
-    time_t now_time = time(NULL);  // 获取当前时间
-    struct tm* time = localtime(&now_time);  // 将时间转换为本地时间结构
-    strftime(t_buf, 64, "%Y-%m-%d %H:%M:%S", time);  // 格式化时间为字符串
-    std::wstring wtxt = s2ws(t_buf);  // 将时间字符串转换为宽字符字符串
-    std::string txt_uft8 = ws2s(wtxt);  // 将宽字符字符串转换回UTF-8字符串
-    txt_uft8 += fmt;  // 添加文件扩展名
-    return txt_uft8;  // 返回格式化后的时间字符串
-}
 
 /* 文本合成函数 */
 int text_to_speech(const char* src_text, const char* des_path, const char* params)
@@ -160,15 +131,16 @@ int text_to_speech(const char* src_text, const char* des_path, const char* param
     return ret;
 }
 
+std::string session_fin;
+std::string filename_fin;
+
 /* 初始化语音合成 */
-int tts_init()
+void tts_init( )
 {
     int         ret                  = MSP_SUCCESS;  // 返回值，初始化为成功
-    std::string login_ori		 	 = "appid = ";  // 登录参数字符串
-    std::string login_fin     	 	 = login_ori + appid + ", work_dir = .";  // 拼接登录参数
+    std::string login_fin     	 	 = "appid = " + appid + ", work_dir = .";  // 拼接登录参数
     const char* login_params = login_fin.c_str();//登录参数,appid与msc库绑定,请勿随意改动
     //cout<< ">>>>>>> login_params:"<< login_params<< endl;
-
     std::string session_ori_1		 = "engine_type = local,voice_name=";  // 会话参数字符串
     std::string session_ori_2		 = ", text_encoding = UTF8, tts_res_path = fo|";
     std::string session_ori_3		 = "/config/bin/msc/res/tts/xiaoyan.jet;fo|";
@@ -177,41 +149,23 @@ int tts_init()
     std::string session_ori_6	 	 = ", pitch = ";
     std::string session_ori_7	 	 = ", rdn = ";
     std::string session_ori_8	 	 = ", speed = ";
-    std::string session_fin			 = session_ori_1 + voice_name + session_ori_2 + source_path + session_ori_3 + source_path + session_ori_4 + std::to_string(sample_rate) + session_ori_5 + std::to_string(volume) + session_ori_6 + std::to_string(pitch) + session_ori_7 + std::to_string(rdn) + session_ori_8 + std::to_string(speed);
-    const char* session_begin_params = session_fin.c_str();
+    session_fin			             =  session_ori_1 + voice_name + session_ori_2 + source_path + 
+                                        session_ori_3 + source_path + session_ori_4 + std::to_string(sample_rate) + 
+                                        session_ori_5 + std::to_string(volume) + session_ori_6 + 
+                                        std::to_string(pitch) + session_ori_7 + std::to_string(rdn) + session_ori_8 + std::to_string(speed);
+
     //cout<< ">>>>>>> session_begin_params:"<< session_begin_params<< endl;
 
-    std::string filename_fin		 = source_path + "/audio/" + current_time();  // 生成输出文件名
-    const char* filename             = filename_fin.c_str(); //合成的语音文件名称
-    //cout<< ">>>>>>> filename:"<< filename << endl;
-    const char* text                 = tts_text.c_str(); //合成文本
+    filename_fin		 = source_path + "/audio/output.wav";  // 生成输出文件名
+    // const char* filename             = filename_fin.c_str(); //合成的语音文件名称
     /* 用户登录 */
     ret = MSPLogin(NULL, NULL, login_params); //第一个参数是用户名，第二个参数是密码，第三个参数是登录参数，用户名和密码可在http://www.xfyun.cn注册获取
-    if (MSP_SUCCESS != ret)
+    if (MSP_SUCCESS != ret) //如果登陆失败，则结束任务
     {
         printf("MSPLogin failed, error code: %d.\n", ret);
-        goto exit ;//登录失败，退出登录
+        MSPLogout(); //退出登录
+        return;
     }
-
-    printf("\n###########################################################################\n");
-    printf("## 语音合成（Text To Speech，TTS）技术能够自动将任意文字实时转换为连续的 ##\n");
-    printf("## 自然语音，是一种能够在任何时间、任何地点，向任何人提供语音信息服务的  ##\n");
-    printf("## 高效便捷手段，非常符合信息时代海量数据、动态更新和个性化查询的需求。  ##\n");
-    printf("###########################################################################\n\n");
-
-    /* 文本合成 */
-    printf("开始合成 ...\n");
-    ret = text_to_speech(text, filename, session_begin_params);
-    if (MSP_SUCCESS != ret)
-    {
-        printf("text_to_speech failed, error code: %d.\n", ret);
-    }
-    printf("合成完毕\n");
-
-exit:
-    MSPLogout(); //退出登录
-
-    return 0;
 }
 
 int main(int argc, char** argv)
@@ -221,7 +175,7 @@ int main(int argc, char** argv)
 
     ros::NodeHandle node("~");    //创建句柄
 
-    node.param("source_path", source_path, std::string("/home/passoni/catkin_ws/11111"));  // 从ROS参数服务器获取source_path参数
+    node.param("source_path", source_path, std::string("${workspaceFolder}"));  // 从ROS参数服务器获取source_path参数
     node.param("/appid", appid, std::string("111111"));  // 从ROS参数服务器获取appid参数
     node.param("/voice_name", voice_name, std::string("111111"));  // 从ROS参数服务器获取voice_name参数
     node.param("tts_text", tts_text, std::string("111111"));  // 从ROS参数服务器获取tts_text参数
@@ -233,15 +187,27 @@ int main(int argc, char** argv)
 
     cout<< ">>>>>>> "<< source_path << endl;
 
-    tts_init();  // 初始化并启动语音合成
+    
+    TTS ts;
+    tts_init();
 
+  
+    /* 文本合成 */
+    printf("开始合成 ...\n");
+    ts.text                 = "你好小飞"; //合成文本
+    ts.ret = text_to_speech(ts.text,filename_fin.c_str(),session_fin.c_str());
+    if (MSP_SUCCESS != ts.ret)
+    {
+        printf("text_to_speech failed, error code: %d.\n", ts.ret);
+    }
+    printf("合成完毕\n");
 /*	while(ros::ok())
 	{
 		
 	} */
 
     //ros::spinOnce(); 
-    ros::spin();  // 进入ROS事件循环
+    // ros::spin();  // 进入ROS事件循环
      
     return 0;
 }

@@ -519,19 +519,6 @@ xf_asr/fast:
 .PHONY : xf_asr/fast
 
 #=============================================================================
-# Target rules for targets named tts_node
-
-# Build rule for target.
-tts_node: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 tts_node
-.PHONY : tts_node
-
-# fast build rule for target.
-tts_node/fast:
-	$(MAKE) -f tts_make/CMakeFiles/tts_node.dir/build.make tts_make/CMakeFiles/tts_node.dir/build
-.PHONY : tts_node/fast
-
-#=============================================================================
 # Target rules for targets named tf2_msgs_generate_messages_nodejs
 
 # Build rule for target.
@@ -1286,7 +1273,6 @@ help:
 	@echo "... tts"
 	@echo "... mic"
 	@echo "... xf_asr"
-	@echo "... tts_node"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_cpp"
 	@echo "... tf_generate_messages_eus"

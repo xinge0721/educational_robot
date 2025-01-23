@@ -137,11 +137,11 @@ include
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(xf_asr src/xf_asr.cpp
-                      src/speech_recognizer.cpp
-                      src/linuxrec.cpp)
-add_executable(mic src/mic.cpp)
-add_executable(tts src/tts.cpp)
+add_executable(xf_asr src/text_to_speech/xf_asr.cpp
+                      src/text_to_speech/speech_recognizer.cpp
+                      src/text_to_speech/linuxrec.cpp)
+add_executable(mic src/angle_wakeup/mic.cpp)
+add_executable(tts src/tts/tts_init.cpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use

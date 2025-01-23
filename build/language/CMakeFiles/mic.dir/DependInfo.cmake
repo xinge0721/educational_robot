@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ros/chenxu/educational_robot/src/language/src/mic.cpp" "/home/ros/chenxu/educational_robot/build/language/CMakeFiles/mic.dir/src/mic.cpp.o"
+  "/home/ros/chenxu/educational_robot/src/language/src/angle_wakeup/mic.cpp" "/home/ros/chenxu/educational_robot/build/language/CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

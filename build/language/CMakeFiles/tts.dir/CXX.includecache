@@ -18,6 +18,14 @@ msp_types.h
 msp_types.h
 /home/ros/chenxu/educational_robot/src/language/include/msp_types.h
 
+/home/ros/chenxu/educational_robot/src/language/include/tts_init.h
+ros/ros.h
+-
+time.h
+-
+wav_head.h
+/home/ros/chenxu/educational_robot/src/language/include/wav_head.h
+
 /home/ros/chenxu/educational_robot/src/language/include/wav_head.h
 iostream
 -
@@ -40,13 +48,9 @@ msp_cmn.h
 msp_errors.h
 /home/ros/chenxu/educational_robot/src/language/include/msp_errors.h
 
-/home/ros/chenxu/educational_robot/src/language/src/tts.cpp
-ros/ros.h
--
-time.h
--
-wav_head.h
-/home/ros/chenxu/educational_robot/src/language/src/wav_head.h
+/home/ros/chenxu/educational_robot/src/language/src/tts/tts_init.cpp
+tts_init.h
+/home/ros/chenxu/educational_robot/src/language/src/tts/tts_init.h
 
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h

@@ -57,7 +57,6 @@ all: gtest/all
 all: fastGPT/all
 all: language/all
 all: main/all
-all: tts_make/all
 all: xf_mic_asr_offline_line/all
 all: xinhuo/all
 
@@ -68,7 +67,6 @@ preinstall: gtest/preinstall
 preinstall: fastGPT/preinstall
 preinstall: language/preinstall
 preinstall: main/preinstall
-preinstall: tts_make/preinstall
 preinstall: xf_mic_asr_offline_line/preinstall
 preinstall: xinhuo/preinstall
 
@@ -84,7 +82,6 @@ clean: gtest/clean
 clean: fastGPT/clean
 clean: language/clean
 clean: main/clean
-clean: tts_make/clean
 clean: xf_mic_asr_offline_line/clean
 clean: xinhuo/clean
 
@@ -218,24 +215,6 @@ main/preinstall:
 main/clean:
 
 .PHONY : main/clean
-
-#=============================================================================
-# Directory level rules for directory tts_make
-
-# Recursive "all" directory target.
-tts_make/all: tts_make/CMakeFiles/tts_node.dir/all
-
-.PHONY : tts_make/all
-
-# Recursive "preinstall" directory target.
-tts_make/preinstall:
-
-.PHONY : tts_make/preinstall
-
-# Recursive "clean" directory target.
-tts_make/clean: tts_make/CMakeFiles/tts_node.dir/clean
-
-.PHONY : tts_make/clean
 
 #=============================================================================
 # Directory level rules for directory xf_mic_asr_offline_line
@@ -1042,7 +1021,7 @@ language/CMakeFiles/mic.dir/clean:
 language/CMakeFiles/xf_asr.dir/all:
 	$(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/depend
 	$(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=25,26,27,28 "Built target xf_asr"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=23,24,25,26 "Built target xf_asr"
 .PHONY : language/CMakeFiles/xf_asr.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1061,33 +1040,6 @@ xf_asr: language/CMakeFiles/xf_asr.dir/rule
 language/CMakeFiles/xf_asr.dir/clean:
 	$(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/clean
 .PHONY : language/CMakeFiles/xf_asr.dir/clean
-
-#=============================================================================
-# Target rules for target tts_make/CMakeFiles/tts_node.dir
-
-# All Build rule for target.
-tts_make/CMakeFiles/tts_node.dir/all:
-	$(MAKE) -f tts_make/CMakeFiles/tts_node.dir/build.make tts_make/CMakeFiles/tts_node.dir/depend
-	$(MAKE) -f tts_make/CMakeFiles/tts_node.dir/build.make tts_make/CMakeFiles/tts_node.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=19,20 "Built target tts_node"
-.PHONY : tts_make/CMakeFiles/tts_node.dir/all
-
-# Build rule for subdir invocation for target.
-tts_make/CMakeFiles/tts_node.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 tts_make/CMakeFiles/tts_node.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ros/chenxu/educational_robot/build/CMakeFiles 0
-.PHONY : tts_make/CMakeFiles/tts_node.dir/rule
-
-# Convenience name for target.
-tts_node: tts_make/CMakeFiles/tts_node.dir/rule
-
-.PHONY : tts_node
-
-# clean rule for target.
-tts_make/CMakeFiles/tts_node.dir/clean:
-	$(MAKE) -f tts_make/CMakeFiles/tts_node.dir/build.make tts_make/CMakeFiles/tts_node.dir/clean
-.PHONY : tts_make/CMakeFiles/tts_node.dir/clean
 
 #=============================================================================
 # Target rules for target xf_mic_asr_offline_line/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir
@@ -1483,7 +1435,7 @@ xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_nod
 xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_nodejs.dir/all: xf_mic_asr_offline_line/CMakeFiles/_xf_mic_asr_offline_line_generate_messages_check_deps_Set_Awake_Word_srv.dir/all
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_nodejs.dir/build.make xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_nodejs.dir/depend
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_nodejs.dir/build.make xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=57,58,59,60,61,62,63,64,65 "Built target xf_mic_asr_offline_line_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=55,56,57,58,59,60,61,62,63 "Built target xf_mic_asr_offline_line_generate_messages_nodejs"
 .PHONY : xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1762,7 +1714,7 @@ xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_py.
 xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_py.dir/all: xf_mic_asr_offline_line/CMakeFiles/_xf_mic_asr_offline_line_generate_messages_check_deps_Set_Awake_Word_srv.dir/all
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_py.dir/build.make xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_py.dir/depend
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_py.dir/build.make xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=66,67,68,69,70,71,72,73,74,75,76 "Built target xf_mic_asr_offline_line_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=64,65,66,67,68,69,70,71,72,73,74 "Built target xf_mic_asr_offline_line_generate_messages_py"
 .PHONY : xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2342,7 +2294,7 @@ xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_cpp
 xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_cpp.dir/all: xf_mic_asr_offline_line/CMakeFiles/_xf_mic_asr_offline_line_generate_messages_check_deps_Set_Awake_Word_srv.dir/all
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_cpp.dir/build.make xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_cpp.dir/depend
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_cpp.dir/build.make xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=29,30,31,32,33,34,35,36,37 "Built target xf_mic_asr_offline_line_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=27,28,29,30,31,32,33,34,35 "Built target xf_mic_asr_offline_line_generate_messages_cpp"
 .PHONY : xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2405,7 +2357,7 @@ xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_eus
 xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_eus.dir/all: xf_mic_asr_offline_line/CMakeFiles/_xf_mic_asr_offline_line_generate_messages_check_deps_Set_Awake_Word_srv.dir/all
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_eus.dir/build.make xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_eus.dir/depend
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_eus.dir/build.make xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=38,39,40,41,42,43,44,45,46,47 "Built target xf_mic_asr_offline_line_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=36,37,38,39,40,41,42,43,44,45 "Built target xf_mic_asr_offline_line_generate_messages_eus"
 .PHONY : xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2495,7 +2447,7 @@ xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_lis
 xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_lisp.dir/all: xf_mic_asr_offline_line/CMakeFiles/_xf_mic_asr_offline_line_generate_messages_check_deps_Set_Awake_Word_srv.dir/all
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_lisp.dir/build.make xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_lisp.dir/depend
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_lisp.dir/build.make xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=48,49,50,51,52,53,54,55,56 "Built target xf_mic_asr_offline_line_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=46,47,48,49,50,51,52,53,54 "Built target xf_mic_asr_offline_line_generate_messages_lisp"
 .PHONY : xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2522,7 +2474,7 @@ xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_generate_messages_lis
 xf_mic_asr_offline_line/CMakeFiles/voice_control.dir/all: xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_gencpp.dir/all
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/voice_control.dir/build.make xf_mic_asr_offline_line/CMakeFiles/voice_control.dir/depend
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/voice_control.dir/build.make xf_mic_asr_offline_line/CMakeFiles/voice_control.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=21,22 "Built target voice_control"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=19,20 "Built target voice_control"
 .PHONY : xf_mic_asr_offline_line/CMakeFiles/voice_control.dir/all
 
 # Build rule for subdir invocation for target.
@@ -2603,7 +2555,7 @@ xf_mic_asr_offline_line/CMakeFiles/node_feedback.dir/clean:
 xf_mic_asr_offline_line/CMakeFiles/wheeltec_mic.dir/all: xf_mic_asr_offline_line/CMakeFiles/xf_mic_asr_offline_line_gencpp.dir/all
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/wheeltec_mic.dir/build.make xf_mic_asr_offline_line/CMakeFiles/wheeltec_mic.dir/depend
 	$(MAKE) -f xf_mic_asr_offline_line/CMakeFiles/wheeltec_mic.dir/build.make xf_mic_asr_offline_line/CMakeFiles/wheeltec_mic.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=23,24 "Built target wheeltec_mic"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=21,22 "Built target wheeltec_mic"
 .PHONY : xf_mic_asr_offline_line/CMakeFiles/wheeltec_mic.dir/all
 
 # Build rule for subdir invocation for target.

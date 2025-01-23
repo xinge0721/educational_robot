@@ -1,3 +1,10 @@
+/*
+ * @Author: ${git_name} <${git_email}>
+ * @Date: 2025-01-22 11:57:40
+ * @LastEditors: ${git_name} <${git_email}>
+ * @LastEditTime: 2025-01-22 21:17:49
+ * @FilePath: /educational_robot/src/language/include/wav_head.h
+ */
 #include <iostream>
 #include <string.h>
 #include <stdlib.h>
@@ -31,6 +38,8 @@ typedef struct _wave_pcm_hdr
 	char            data[4];                // = "data";
 	int				data_size;              // = 纯数据长度 : FileSize - 44 
 } wave_pcm_hdr;
+
+
 
 /* 默认wav音频头部数据 */
 wave_pcm_hdr default_wav_hdr = 

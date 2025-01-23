@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "/home/ros/chenxu/educational_robot/devel/lib/language/mic"
   "/home/ros/chenxu/educational_robot/devel/lib/language/mic.pdb"
-  "CMakeFiles/mic.dir/src/mic.cpp.o"
+  "CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/ros/chenxu/educational_robot/src/language/src/linuxrec.cpp" "/home/ros/chenxu/educational_robot/build/language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.o"
-  "/home/ros/chenxu/educational_robot/src/language/src/speech_recognizer.cpp" "/home/ros/chenxu/educational_robot/build/language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.o"
-  "/home/ros/chenxu/educational_robot/src/language/src/xf_asr.cpp" "/home/ros/chenxu/educational_robot/build/language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.o"
+  "/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/linuxrec.cpp" "/home/ros/chenxu/educational_robot/build/language/CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.o"
+  "/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/speech_recognizer.cpp" "/home/ros/chenxu/educational_robot/build/language/CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.o"
+  "/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/xf_asr.cpp" "/home/ros/chenxu/educational_robot/build/language/CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

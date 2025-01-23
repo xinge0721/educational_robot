@@ -57,57 +57,57 @@ include language/CMakeFiles/xf_asr.dir/progress.make
 # Include the compile flags for this target's objects.
 include language/CMakeFiles/xf_asr.dir/flags.make
 
-language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.o: language/CMakeFiles/xf_asr.dir/flags.make
-language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.o: /home/ros/chenxu/educational_robot/src/language/src/xf_asr.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.o"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xf_asr.dir/src/xf_asr.cpp.o -c /home/ros/chenxu/educational_robot/src/language/src/xf_asr.cpp
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.o: language/CMakeFiles/xf_asr.dir/flags.make
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.o: /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/xf_asr.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object language/CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.o"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.o -c /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/xf_asr.cpp
 
-language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xf_asr.dir/src/xf_asr.cpp.i"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/chenxu/educational_robot/src/language/src/xf_asr.cpp > CMakeFiles/xf_asr.dir/src/xf_asr.cpp.i
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.i"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/xf_asr.cpp > CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.i
 
-language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xf_asr.dir/src/xf_asr.cpp.s"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/chenxu/educational_robot/src/language/src/xf_asr.cpp -o CMakeFiles/xf_asr.dir/src/xf_asr.cpp.s
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.s"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/xf_asr.cpp -o CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.s
 
-language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.o: language/CMakeFiles/xf_asr.dir/flags.make
-language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.o: /home/ros/chenxu/educational_robot/src/language/src/speech_recognizer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.o"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.o -c /home/ros/chenxu/educational_robot/src/language/src/speech_recognizer.cpp
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.o: language/CMakeFiles/xf_asr.dir/flags.make
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.o: /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/speech_recognizer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object language/CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.o"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.o -c /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/speech_recognizer.cpp
 
-language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.i"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/chenxu/educational_robot/src/language/src/speech_recognizer.cpp > CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.i
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.i"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/speech_recognizer.cpp > CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.i
 
-language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.s"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/chenxu/educational_robot/src/language/src/speech_recognizer.cpp -o CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.s
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.s"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/speech_recognizer.cpp -o CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.s
 
-language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.o: language/CMakeFiles/xf_asr.dir/flags.make
-language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.o: /home/ros/chenxu/educational_robot/src/language/src/linuxrec.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.o"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xf_asr.dir/src/linuxrec.cpp.o -c /home/ros/chenxu/educational_robot/src/language/src/linuxrec.cpp
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.o: language/CMakeFiles/xf_asr.dir/flags.make
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.o: /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/linuxrec.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object language/CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.o"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.o -c /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/linuxrec.cpp
 
-language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xf_asr.dir/src/linuxrec.cpp.i"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/chenxu/educational_robot/src/language/src/linuxrec.cpp > CMakeFiles/xf_asr.dir/src/linuxrec.cpp.i
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.i"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/linuxrec.cpp > CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.i
 
-language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xf_asr.dir/src/linuxrec.cpp.s"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/chenxu/educational_robot/src/language/src/linuxrec.cpp -o CMakeFiles/xf_asr.dir/src/linuxrec.cpp.s
+language/CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.s"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/chenxu/educational_robot/src/language/src/text_to_speech/linuxrec.cpp -o CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.s
 
 # Object files for target xf_asr
 xf_asr_OBJECTS = \
-"CMakeFiles/xf_asr.dir/src/xf_asr.cpp.o" \
-"CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.o" \
-"CMakeFiles/xf_asr.dir/src/linuxrec.cpp.o"
+"CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.o" \
+"CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.o" \
+"CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.o"
 
 # External object files for target xf_asr
 xf_asr_EXTERNAL_OBJECTS =
 
-/home/ros/chenxu/educational_robot/devel/lib/language/xf_asr: language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.o
-/home/ros/chenxu/educational_robot/devel/lib/language/xf_asr: language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.o
-/home/ros/chenxu/educational_robot/devel/lib/language/xf_asr: language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.o
+/home/ros/chenxu/educational_robot/devel/lib/language/xf_asr: language/CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.o
+/home/ros/chenxu/educational_robot/devel/lib/language/xf_asr: language/CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.o
+/home/ros/chenxu/educational_robot/devel/lib/language/xf_asr: language/CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.o
 /home/ros/chenxu/educational_robot/devel/lib/language/xf_asr: language/CMakeFiles/xf_asr.dir/build.make
 /home/ros/chenxu/educational_robot/devel/lib/language/xf_asr: /opt/ros/noetic/lib/libroscpp.so
 /home/ros/chenxu/educational_robot/devel/lib/language/xf_asr: /usr/lib/x86_64-linux-gnu/libpthread.so

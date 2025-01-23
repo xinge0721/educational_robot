@@ -212,140 +212,140 @@ xf_asr/fast:
 	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/build
 .PHONY : xf_asr/fast
 
-src/linuxrec.o: src/linuxrec.cpp.o
+src/angle_wakeup/mic.o: src/angle_wakeup/mic.cpp.o
 
-.PHONY : src/linuxrec.o
-
-# target to build an object file
-src/linuxrec.cpp.o:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.o
-.PHONY : src/linuxrec.cpp.o
-
-src/linuxrec.i: src/linuxrec.cpp.i
-
-.PHONY : src/linuxrec.i
-
-# target to preprocess a source file
-src/linuxrec.cpp.i:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.i
-.PHONY : src/linuxrec.cpp.i
-
-src/linuxrec.s: src/linuxrec.cpp.s
-
-.PHONY : src/linuxrec.s
-
-# target to generate assembly for a file
-src/linuxrec.cpp.s:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/linuxrec.cpp.s
-.PHONY : src/linuxrec.cpp.s
-
-src/mic.o: src/mic.cpp.o
-
-.PHONY : src/mic.o
+.PHONY : src/angle_wakeup/mic.o
 
 # target to build an object file
-src/mic.cpp.o:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/mic.dir/build.make language/CMakeFiles/mic.dir/src/mic.cpp.o
-.PHONY : src/mic.cpp.o
+src/angle_wakeup/mic.cpp.o:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/mic.dir/build.make language/CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.o
+.PHONY : src/angle_wakeup/mic.cpp.o
 
-src/mic.i: src/mic.cpp.i
+src/angle_wakeup/mic.i: src/angle_wakeup/mic.cpp.i
 
-.PHONY : src/mic.i
+.PHONY : src/angle_wakeup/mic.i
 
 # target to preprocess a source file
-src/mic.cpp.i:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/mic.dir/build.make language/CMakeFiles/mic.dir/src/mic.cpp.i
-.PHONY : src/mic.cpp.i
+src/angle_wakeup/mic.cpp.i:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/mic.dir/build.make language/CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.i
+.PHONY : src/angle_wakeup/mic.cpp.i
 
-src/mic.s: src/mic.cpp.s
+src/angle_wakeup/mic.s: src/angle_wakeup/mic.cpp.s
 
-.PHONY : src/mic.s
+.PHONY : src/angle_wakeup/mic.s
 
 # target to generate assembly for a file
-src/mic.cpp.s:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/mic.dir/build.make language/CMakeFiles/mic.dir/src/mic.cpp.s
-.PHONY : src/mic.cpp.s
+src/angle_wakeup/mic.cpp.s:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/mic.dir/build.make language/CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.s
+.PHONY : src/angle_wakeup/mic.cpp.s
 
-src/speech_recognizer.o: src/speech_recognizer.cpp.o
+src/text_to_speech/linuxrec.o: src/text_to_speech/linuxrec.cpp.o
 
-.PHONY : src/speech_recognizer.o
+.PHONY : src/text_to_speech/linuxrec.o
 
 # target to build an object file
-src/speech_recognizer.cpp.o:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.o
-.PHONY : src/speech_recognizer.cpp.o
+src/text_to_speech/linuxrec.cpp.o:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.o
+.PHONY : src/text_to_speech/linuxrec.cpp.o
 
-src/speech_recognizer.i: src/speech_recognizer.cpp.i
+src/text_to_speech/linuxrec.i: src/text_to_speech/linuxrec.cpp.i
 
-.PHONY : src/speech_recognizer.i
+.PHONY : src/text_to_speech/linuxrec.i
 
 # target to preprocess a source file
-src/speech_recognizer.cpp.i:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.i
-.PHONY : src/speech_recognizer.cpp.i
+src/text_to_speech/linuxrec.cpp.i:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.i
+.PHONY : src/text_to_speech/linuxrec.cpp.i
 
-src/speech_recognizer.s: src/speech_recognizer.cpp.s
+src/text_to_speech/linuxrec.s: src/text_to_speech/linuxrec.cpp.s
 
-.PHONY : src/speech_recognizer.s
+.PHONY : src/text_to_speech/linuxrec.s
 
 # target to generate assembly for a file
-src/speech_recognizer.cpp.s:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/speech_recognizer.cpp.s
-.PHONY : src/speech_recognizer.cpp.s
+src/text_to_speech/linuxrec.cpp.s:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/text_to_speech/linuxrec.cpp.s
+.PHONY : src/text_to_speech/linuxrec.cpp.s
 
-src/tts.o: src/tts.cpp.o
+src/text_to_speech/speech_recognizer.o: src/text_to_speech/speech_recognizer.cpp.o
 
-.PHONY : src/tts.o
+.PHONY : src/text_to_speech/speech_recognizer.o
 
 # target to build an object file
-src/tts.cpp.o:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/tts.dir/build.make language/CMakeFiles/tts.dir/src/tts.cpp.o
-.PHONY : src/tts.cpp.o
+src/text_to_speech/speech_recognizer.cpp.o:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.o
+.PHONY : src/text_to_speech/speech_recognizer.cpp.o
 
-src/tts.i: src/tts.cpp.i
+src/text_to_speech/speech_recognizer.i: src/text_to_speech/speech_recognizer.cpp.i
 
-.PHONY : src/tts.i
+.PHONY : src/text_to_speech/speech_recognizer.i
 
 # target to preprocess a source file
-src/tts.cpp.i:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/tts.dir/build.make language/CMakeFiles/tts.dir/src/tts.cpp.i
-.PHONY : src/tts.cpp.i
+src/text_to_speech/speech_recognizer.cpp.i:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.i
+.PHONY : src/text_to_speech/speech_recognizer.cpp.i
 
-src/tts.s: src/tts.cpp.s
+src/text_to_speech/speech_recognizer.s: src/text_to_speech/speech_recognizer.cpp.s
 
-.PHONY : src/tts.s
+.PHONY : src/text_to_speech/speech_recognizer.s
 
 # target to generate assembly for a file
-src/tts.cpp.s:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/tts.dir/build.make language/CMakeFiles/tts.dir/src/tts.cpp.s
-.PHONY : src/tts.cpp.s
+src/text_to_speech/speech_recognizer.cpp.s:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/text_to_speech/speech_recognizer.cpp.s
+.PHONY : src/text_to_speech/speech_recognizer.cpp.s
 
-src/xf_asr.o: src/xf_asr.cpp.o
+src/text_to_speech/xf_asr.o: src/text_to_speech/xf_asr.cpp.o
 
-.PHONY : src/xf_asr.o
+.PHONY : src/text_to_speech/xf_asr.o
 
 # target to build an object file
-src/xf_asr.cpp.o:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.o
-.PHONY : src/xf_asr.cpp.o
+src/text_to_speech/xf_asr.cpp.o:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.o
+.PHONY : src/text_to_speech/xf_asr.cpp.o
 
-src/xf_asr.i: src/xf_asr.cpp.i
+src/text_to_speech/xf_asr.i: src/text_to_speech/xf_asr.cpp.i
 
-.PHONY : src/xf_asr.i
+.PHONY : src/text_to_speech/xf_asr.i
 
 # target to preprocess a source file
-src/xf_asr.cpp.i:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.i
-.PHONY : src/xf_asr.cpp.i
+src/text_to_speech/xf_asr.cpp.i:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.i
+.PHONY : src/text_to_speech/xf_asr.cpp.i
 
-src/xf_asr.s: src/xf_asr.cpp.s
+src/text_to_speech/xf_asr.s: src/text_to_speech/xf_asr.cpp.s
 
-.PHONY : src/xf_asr.s
+.PHONY : src/text_to_speech/xf_asr.s
 
 # target to generate assembly for a file
-src/xf_asr.cpp.s:
-	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/xf_asr.cpp.s
-.PHONY : src/xf_asr.cpp.s
+src/text_to_speech/xf_asr.cpp.s:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/src/text_to_speech/xf_asr.cpp.s
+.PHONY : src/text_to_speech/xf_asr.cpp.s
+
+src/tts/tts_init.o: src/tts/tts_init.cpp.o
+
+.PHONY : src/tts/tts_init.o
+
+# target to build an object file
+src/tts/tts_init.cpp.o:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/tts.dir/build.make language/CMakeFiles/tts.dir/src/tts/tts_init.cpp.o
+.PHONY : src/tts/tts_init.cpp.o
+
+src/tts/tts_init.i: src/tts/tts_init.cpp.i
+
+.PHONY : src/tts/tts_init.i
+
+# target to preprocess a source file
+src/tts/tts_init.cpp.i:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/tts.dir/build.make language/CMakeFiles/tts.dir/src/tts/tts_init.cpp.i
+.PHONY : src/tts/tts_init.cpp.i
+
+src/tts/tts_init.s: src/tts/tts_init.cpp.s
+
+.PHONY : src/tts/tts_init.s
+
+# target to generate assembly for a file
+src/tts/tts_init.cpp.s:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/tts.dir/build.make language/CMakeFiles/tts.dir/src/tts/tts_init.cpp.s
+.PHONY : src/tts/tts_init.cpp.s
 
 # Help Target
 help:
@@ -363,21 +363,21 @@ help:
 	@echo "... test"
 	@echo "... mic"
 	@echo "... xf_asr"
-	@echo "... src/linuxrec.o"
-	@echo "... src/linuxrec.i"
-	@echo "... src/linuxrec.s"
-	@echo "... src/mic.o"
-	@echo "... src/mic.i"
-	@echo "... src/mic.s"
-	@echo "... src/speech_recognizer.o"
-	@echo "... src/speech_recognizer.i"
-	@echo "... src/speech_recognizer.s"
-	@echo "... src/tts.o"
-	@echo "... src/tts.i"
-	@echo "... src/tts.s"
-	@echo "... src/xf_asr.o"
-	@echo "... src/xf_asr.i"
-	@echo "... src/xf_asr.s"
+	@echo "... src/angle_wakeup/mic.o"
+	@echo "... src/angle_wakeup/mic.i"
+	@echo "... src/angle_wakeup/mic.s"
+	@echo "... src/text_to_speech/linuxrec.o"
+	@echo "... src/text_to_speech/linuxrec.i"
+	@echo "... src/text_to_speech/linuxrec.s"
+	@echo "... src/text_to_speech/speech_recognizer.o"
+	@echo "... src/text_to_speech/speech_recognizer.i"
+	@echo "... src/text_to_speech/speech_recognizer.s"
+	@echo "... src/text_to_speech/xf_asr.o"
+	@echo "... src/text_to_speech/xf_asr.i"
+	@echo "... src/text_to_speech/xf_asr.s"
+	@echo "... src/tts/tts_init.o"
+	@echo "... src/tts/tts_init.i"
+	@echo "... src/tts/tts_init.s"
 .PHONY : help
 
 

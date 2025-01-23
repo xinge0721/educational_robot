@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "/home/ros/chenxu/educational_robot/devel/lib/language/tts"
   "/home/ros/chenxu/educational_robot/devel/lib/language/tts.pdb"
-  "CMakeFiles/tts.dir/src/tts.cpp.o"
+  "CMakeFiles/tts.dir/src/tts/tts_init.cpp.o"
 )
 
 # Per-language clean rules from dependency scanning.

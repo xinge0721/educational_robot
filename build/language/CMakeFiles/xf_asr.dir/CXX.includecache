@@ -26,7 +26,7 @@ msp_types.h
 
 /home/ros/chenxu/educational_robot/src/language/include/speech_recognizer.h
 
-/home/ros/chenxu/educational_robot/src/language/src/linuxrec.cpp
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/linuxrec.cpp
 stdio.h
 -
 stdlib.h
@@ -42,11 +42,11 @@ sys/stat.h
 pthread.h
 -
 formats.h
-/home/ros/chenxu/educational_robot/src/language/src/formats.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/formats.h
 linuxrec.h
-/home/ros/chenxu/educational_robot/src/language/src/linuxrec.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/linuxrec.h
 
-/home/ros/chenxu/educational_robot/src/language/src/speech_recognizer.cpp
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/speech_recognizer.cpp
 stdio.h
 -
 stdlib.h
@@ -56,17 +56,17 @@ unistd.h
 string.h
 -
 speech_recognizer.h
-/home/ros/chenxu/educational_robot/src/language/src/speech_recognizer.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/speech_recognizer.h
 qisr.h
-/home/ros/chenxu/educational_robot/src/language/src/qisr.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/qisr.h
 msp_cmn.h
-/home/ros/chenxu/educational_robot/src/language/src/msp_cmn.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/msp_cmn.h
 msp_errors.h
-/home/ros/chenxu/educational_robot/src/language/src/msp_errors.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/msp_errors.h
 linuxrec.h
-/home/ros/chenxu/educational_robot/src/language/src/linuxrec.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/linuxrec.h
 
-/home/ros/chenxu/educational_robot/src/language/src/xf_asr.cpp
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/xf_asr.cpp
 stdlib.h
 -
 stdio.h
@@ -76,19 +76,19 @@ string.h
 unistd.h
 -
 qisr.h
-/home/ros/chenxu/educational_robot/src/language/src/qisr.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/qisr.h
 msp_cmn.h
-/home/ros/chenxu/educational_robot/src/language/src/msp_cmn.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/msp_cmn.h
 msp_errors.h
-/home/ros/chenxu/educational_robot/src/language/src/msp_errors.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/msp_errors.h
 speech_recognizer.h
-/home/ros/chenxu/educational_robot/src/language/src/speech_recognizer.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/speech_recognizer.h
 iconv.h
 -
 ros/ros.h
-/home/ros/chenxu/educational_robot/src/language/src/ros/ros.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/ros/ros.h
 std_msgs/String.h
-/home/ros/chenxu/educational_robot/src/language/src/std_msgs/String.h
+/home/ros/chenxu/educational_robot/src/language/src/text_to_speech/std_msgs/String.h
 
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h

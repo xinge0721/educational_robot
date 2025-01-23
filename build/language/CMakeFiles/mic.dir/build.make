@@ -57,27 +57,27 @@ include language/CMakeFiles/mic.dir/progress.make
 # Include the compile flags for this target's objects.
 include language/CMakeFiles/mic.dir/flags.make
 
-language/CMakeFiles/mic.dir/src/mic.cpp.o: language/CMakeFiles/mic.dir/flags.make
-language/CMakeFiles/mic.dir/src/mic.cpp.o: /home/ros/chenxu/educational_robot/src/language/src/mic.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object language/CMakeFiles/mic.dir/src/mic.cpp.o"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mic.dir/src/mic.cpp.o -c /home/ros/chenxu/educational_robot/src/language/src/mic.cpp
+language/CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.o: language/CMakeFiles/mic.dir/flags.make
+language/CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.o: /home/ros/chenxu/educational_robot/src/language/src/angle_wakeup/mic.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ros/chenxu/educational_robot/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object language/CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.o"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.o -c /home/ros/chenxu/educational_robot/src/language/src/angle_wakeup/mic.cpp
 
-language/CMakeFiles/mic.dir/src/mic.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mic.dir/src/mic.cpp.i"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/chenxu/educational_robot/src/language/src/mic.cpp > CMakeFiles/mic.dir/src/mic.cpp.i
+language/CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.i"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ros/chenxu/educational_robot/src/language/src/angle_wakeup/mic.cpp > CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.i
 
-language/CMakeFiles/mic.dir/src/mic.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mic.dir/src/mic.cpp.s"
-	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/chenxu/educational_robot/src/language/src/mic.cpp -o CMakeFiles/mic.dir/src/mic.cpp.s
+language/CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.s"
+	cd /home/ros/chenxu/educational_robot/build/language && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ros/chenxu/educational_robot/src/language/src/angle_wakeup/mic.cpp -o CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.s
 
 # Object files for target mic
 mic_OBJECTS = \
-"CMakeFiles/mic.dir/src/mic.cpp.o"
+"CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.o"
 
 # External object files for target mic
 mic_EXTERNAL_OBJECTS =
 
-/home/ros/chenxu/educational_robot/devel/lib/language/mic: language/CMakeFiles/mic.dir/src/mic.cpp.o
+/home/ros/chenxu/educational_robot/devel/lib/language/mic: language/CMakeFiles/mic.dir/src/angle_wakeup/mic.cpp.o
 /home/ros/chenxu/educational_robot/devel/lib/language/mic: language/CMakeFiles/mic.dir/build.make
 /home/ros/chenxu/educational_robot/devel/lib/language/mic: /opt/ros/noetic/lib/libroscpp.so
 /home/ros/chenxu/educational_robot/devel/lib/language/mic: /usr/lib/x86_64-linux-gnu/libpthread.so
