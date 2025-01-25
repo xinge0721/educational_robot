@@ -380,7 +380,7 @@ RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 SETUPTOOLS_DEB_LAYOUT:BOOL=ON
 
 //Name of the computer/site where compile is being run
-SITE:STRING=ros-VirtualBox
+SITE:STRING=ros-virtual-machine
 
 //LSB Distrib tag
 UBUNTU:BOOL=TRUE
@@ -411,9 +411,6 @@ catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
-
-//The directory containing a CMake configuration file for curl.
-curl_DIR:PATH=curl_DIR-NOTFOUND
 
 //Value Computed by CMake
 fastGPT_BINARY_DIR:STATIC=/home/ros/chenxu/educational_robot/build/fastGPT
@@ -556,12 +553,6 @@ tf2_ros_DIR:PATH=/opt/ros/noetic/share/tf2_ros/cmake
 
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/noetic/share/tf/cmake
-
-//Value Computed by CMake
-tts_BINARY_DIR:STATIC=/home/ros/chenxu/educational_robot/build/tts_make
-
-//Value Computed by CMake
-tts_SOURCE_DIR:STATIC=/home/ros/chenxu/educational_robot/src/tts_make
 
 //Value Computed by CMake
 xf_mic_asr_offline_line_BINARY_DIR:STATIC=/home/ros/chenxu/educational_robot/build/xf_mic_asr_offline_line

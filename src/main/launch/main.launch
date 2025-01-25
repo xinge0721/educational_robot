@@ -1,0 +1,22 @@
+<launch>
+    <!-- 启动 roscore -->
+    <master auto="start"/>
+
+    <!-- 启动 mic.cpp 节点 -->
+    <node name="mic_node" pkg="language" type="mic" output="screen">
+        <!-- 如果需要传递参数，可以在这里添加 -->
+        <!-- <param name="param_name" value="param_value"/> -->
+    </node>
+
+    <!-- 启动 xf_asr.cpp 节点 -->
+    <node name="xf_asr_node" pkg="language" type="xf_asr" output="screen">
+        <!-- 如果需要传递参数，可以在这里添加 -->
+        <!-- <param name="param_name" value="param_value"/> -->
+    </node>
+
+    <!-- 启动 SparkPy.py 节点 -->
+    <node name="spark_py_node" pkg="xinhuo" type="SparkPy.py" output="screen">
+        <!-- 如果需要传递参数，可以在这里添加 -->
+        <!-- <param name="param_name" value="param_value"/> -->
+    </node>
+</launch>

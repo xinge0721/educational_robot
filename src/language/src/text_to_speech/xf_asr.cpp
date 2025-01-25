@@ -11,7 +11,8 @@
 #include "msp_errors.h" // 语音识别错误码头文件
 #include "speech_recognizer.h" // 语音识别器头文件
 #include <iconv.h>   // 字符编码转换头文件
- 
+ #include <std_msgs/Int32.h>
+
 #include "ros/ros.h" // ROS头文件
 #include "std_msgs/String.h" // ROS标准消息类型，字符串消息
  
@@ -29,10 +30,14 @@ int resultFlag   = 0 ;  // 结果标志，1表示有识别结果，0表示无结
  */
 static void show_result(char *string, char is_over)
 {
-    resultFlag=1;   // 设置结果标志为1
+    
     printf("\rResult: [ %s ]", string);  // 打印识别结果
     if(is_over)
+    {
+        resultFlag=1;   // 设置结果标志为1
         putchar('\n');  // 如果识别结束，换行
+    }
+
 }
  
 static char *g_result = NULL;  // 全局变量，存储识别结果
@@ -79,7 +84,7 @@ void on_speech_begin()
     g_buffersize = BUFFER_SIZE;  // 重置缓冲区大小
     memset(g_result, 0, g_buffersize);  // 清空缓冲区
  
-    printf("Start Listening...\n");  // 打印开始监听提示
+    // printf("Start Listening...\n");  // 打印开始监听提示
 }
 
 /**
@@ -89,10 +94,10 @@ void on_speech_begin()
  */
 void on_speech_end(int reason)
 {
-    if (reason == END_REASON_VAD_DETECT)  // 如果是因为语音活动检测结束
-        printf("\nSpeaking done \n");  // 打印说话结束提示
-    else
-        printf("\nRecognizer error %d\n", reason);  // 打印识别错误信息
+    // if (reason == END_REASON_VAD_DETECT)  // 如果是因为语音活动检测结束
+    //     // printf("\nSpeaking done \n");  // 打印说话结束提示
+    // else
+    //     // printf("\nRecognizer error %d\n", reason);  // 打印识别错误信息
 }
  
 
@@ -116,19 +121,19 @@ static void demo_mic(const char* session_begin_params)
  
     errcode = sr_init(&iat, session_begin_params, SR_MIC, &recnotifier);  // 初始化语音识别器
     if (errcode) {
-        printf("speech recognizer init failed\n");  // 初始化失败
+        // printf("speech recognizer init failed\n");  // 初始化失败
         return;
     }
     errcode = sr_start_listening(&iat);  // 开始录音
     if (errcode) {
-        printf("start listen failed %d\n", errcode);  // 开始录音失败
+        // printf("start listen failed %d\n", errcode);  // 开始录音失败
     }
     /* demo 10 seconds recording */
-    while(i++ < 2)  // 模拟录音10秒
+    while(i++ < 8)  // 模拟录音10秒
         sleep(1);
     errcode = sr_stop_listening(&iat);  // 停止录音
     if (errcode) {
-        printf("stop listening failed %d\n", errcode);  // 停止录音失败
+        // printf("stop listening failed %d\n", errcode);  // 停止录音失败
     }
  
     sr_uninit(&iat);  // 反初始化语音识别器
@@ -146,9 +151,9 @@ static void demo_mic(const char* session_begin_params)
  * @param msg 唤醒消息
  * 功能：接收到唤醒消息后，设置唤醒标志并延迟700ms。
  */
-void WakeUp(const std_msgs::String::ConstPtr& msg)
+void WakeUp(const std_msgs::Int32::ConstPtr& msg)
 {
-    printf("waking up\r\n");  // 打印唤醒提示
+    std::cout << "角度为:" <<msg->data << std::endl;
     usleep(700*1000);  // 延迟700ms
     wakeupFlag = !wakeupFlag;  // 设置唤醒标志
 }
@@ -170,9 +175,9 @@ int main(int argc, char* argv[])
  
     // 声明Publisher和Subscriber
     // 订阅唤醒语音识别的信号
-    ros::Subscriber wakeUpSub = n.subscribe("voiceWakeup", 1000, WakeUp);  // 订阅唤醒话题
+    ros::Subscriber wakeUpSub = n.subscribe("/mic/awake/angle", 1000, WakeUp);  // 订阅唤醒话题
     // 发布语音识别结果
-    ros::Publisher voiceWordsPub = n.advertise<std_msgs::String>("voiceWords", 1000);  // 发布识别结果话题
+    ros::Publisher voiceWordsPub = n.advertise<std_msgs::String>("chatter", 1000);  // 发布识别结果话题
  
     ROS_INFO("Sleeping...");  // 打印休眠提示
     int count=0;
@@ -180,7 +185,7 @@ int main(int argc, char* argv[])
     {
         // 语音识别唤醒
         if (wakeupFlag){  // 如果唤醒标志为1
-            ROS_INFO("Wakeup...");  // 打印唤醒提示
+            // ROS_INFO("Wakeup...");  // 打印唤醒提示
             int ret = MSP_SUCCESS;
             const char* login_params = "appid = 68a31b42, work_dir = .";  // 登录参数
  
@@ -195,13 +200,13 @@ int main(int argc, char* argv[])
                 printf("MSPLogin failed , Error code %d.\n",ret);  // 打印登录失败信息
             }
  
-            printf("Demo recognizing the speech from microphone\n");  // 打印提示信息
+            // printf("Demo recognizing the speech from microphone\n");  // 打印提示信息
 	
-	    printf("Speak in 3 seconds\n");  // 打印提示信息
+	    // printf("Speak in 3 seconds\n");  // 打印提示信息
  	
             demo_mic(session_begin_params);  // 调用麦克风录音识别示例
  
-            printf("3 sec passed\n");  // 打印提示信息
+            // printf("3 sec passed\n");  // 打印提示信息
         
             wakeupFlag=1;  // 设置唤醒标志
             MSPLogout();  // 登出语音识别服务

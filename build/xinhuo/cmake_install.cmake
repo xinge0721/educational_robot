@@ -53,6 +53,14 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/xinhuo" TYPE PROGRAM FILES "/home/ros/chenxu/educational_robot/build/xinhuo/catkin_generated/installspace/SparkPythondemo.py")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/xinhuo" TYPE PROGRAM FILES "/home/ros/chenxu/educational_robot/build/xinhuo/catkin_generated/installspace/Sparktext.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/xinhuo" TYPE PROGRAM FILES "/home/ros/chenxu/educational_robot/build/xinhuo/catkin_generated/installspace/MyWebSocket.py")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/xinhuo" TYPE PROGRAM FILES "/home/ros/chenxu/educational_robot/build/xinhuo/catkin_generated/installspace/SparkPy.py")
 endif()
 

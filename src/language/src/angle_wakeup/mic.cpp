@@ -89,6 +89,8 @@ int deal_with(unsigned char buffer)
 
                         if (reader.parse(iwv_msg, value_iwv)) {  // 解析 info 字段
                             angle_int = value_iwv["ivw"]["angle"].asInt();  // 获取角度值
+                            if(angle_int < 0 && angle_int > 360)//这一步非常重要,因为拾取角度时总是拾取到一些莫名其妙的数据,而且无法救回
+                                angle_int = if_awake = 0;
                         }
                     } else {
                         cout << "reader json fail!" << endl;  // JSON 解析失败
@@ -280,7 +282,7 @@ int main(int argc, char** argv)
     voice_words_pub = node.advertise<std_msgs::String>(voice_words, 1);  // 发布语音内容
     pub_awake_angle = node.advertise<std_msgs::Int32>(awake_angle_topic, 1);  // 发布唤醒角度
 
-    ros::Publisher pub_awake_language = node.advertise<std_msgs::String>("voiceWakeup", 10);//语音识别标志位
+    // ros::Publisher pub_awake_language = node.advertise<std_msgs::String>("voiceWakeup", 10);//语音识别标志位
 
     ros::NodeHandle private_n("~");  // 创建私有命名空间句柄
     private_n.param<std::string>("usart_port_name", usart_port_name, "/dev/wheeltec_mic");  // 获取串口设备名称
@@ -342,7 +344,6 @@ int main(int argc, char** argv)
             msg.data = "小车唤醒";
             
             voice_words_pub.publish(msg);  // 发布语音内容
-            pub_awake_language.publish(msg);  // 发布语音内容
 
             sleep(0.8);  // 延时
             if_awake = 0;  // 重置唤醒标志位
