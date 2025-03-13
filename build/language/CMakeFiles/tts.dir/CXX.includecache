@@ -55,6 +55,8 @@ ros/ros.h
 -
 std_msgs/String.h
 -
+sys/stat.h
+-
 
 /opt/ros/noetic/include/ros/advertise_options.h
 ros/forwards.h

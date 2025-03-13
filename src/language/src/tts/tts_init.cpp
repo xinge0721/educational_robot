@@ -1,6 +1,7 @@
 #include "tts_init.h"
 #include <ros/ros.h>
 #include <std_msgs/String.h>  // 添加字符串消息头文件
+#include <sys/stat.h>
 using namespace std;  // 使用标准命名空间
 
 
@@ -141,6 +142,47 @@ if (synth_status == MSP_TTS_FLAG_DATA_END && audio_len == 0) {
     return ret;
 }
 
+
+bool playAndDeleteAudio(const std::string& file_path) {
+    // 检查文件是否存在
+    struct stat buffer;
+    if (stat(file_path.c_str(), &buffer) != 0) {
+        ROS_ERROR("Audio file not found: %s", file_path.c_str());
+        return false;
+    }
+
+    // 验证文件格式
+    if (file_path.substr(file_path.find_last_of(".") + 1) != "wav") {
+        ROS_ERROR("Invalid file format (only WAV supported): %s", file_path.c_str());
+        return false;
+    }
+
+    // 构建播放命令
+    std::string command = "aplay -q \"" + file_path + "\"";
+    int play_result = system(command.c_str());
+
+    // 处理播放结果
+    if (play_result == 0) {
+        ROS_INFO("Playback completed: %s", file_path.c_str());
+        if (std::remove(file_path.c_str()) != 0) {
+            ROS_ERROR("Failed to delete audio file: %s", file_path.c_str());
+            return false;
+        }
+        return true;
+    }
+
+    // 错误处理
+    if (WIFEXITED(play_result)) {
+        ROS_ERROR("Playback failed with exit code %d", WEXITSTATUS(play_result));
+    } else {
+        ROS_ERROR("Playback terminated abnormally");
+    }
+    
+    // 可选：保留失败文件用于调试
+    // ROS_WARN("Keeping failed audio file: %s", file_path.c_str());
+    return false;
+}
+
 std::string session_fin;
 std::string filename_fin;
 
@@ -189,9 +231,10 @@ void ttsCallback(const std_msgs::String::ConstPtr& msg)
         printf("合成失败，错误码：%d\n", ret);
     } else {
         printf("合成完成，音频已保存至：%s\n", filename_fin.c_str());
-        std_msgs::String path_msg;
-        path_msg.data = filename_fin;
-        audio_pub.publish(path_msg); // 现在使用持久化的Publisher
+        playAndDeleteAudio(filename_fin.c_str());
+        // std_msgs::String path_msg;
+        // path_msg.data = filename_fin;
+        // audio_pub.publish(path_msg); // 现在使用持久化的Publisher
 
     }
 }
