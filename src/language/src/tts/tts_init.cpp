@@ -178,7 +178,7 @@ void tts_init( )
         return;
     }
 }
-
+ros::Publisher audio_pub;
 // 新建话题回调函数
 void ttsCallback(const std_msgs::String::ConstPtr& msg)
 {
@@ -189,6 +189,10 @@ void ttsCallback(const std_msgs::String::ConstPtr& msg)
         printf("合成失败，错误码：%d\n", ret);
     } else {
         printf("合成完成，音频已保存至：%s\n", filename_fin.c_str());
+        std_msgs::String path_msg;
+        path_msg.data = filename_fin;
+        audio_pub.publish(path_msg); // 现在使用持久化的Publisher
+
     }
 }
 
@@ -207,6 +211,9 @@ int main(int argc, char** argv)
     node.param("/sample_rate", sample_rate, 0);  // 从ROS参数服务器获取sample_rate参数
 
     cout<< ">>>>>>> "<< source_path << endl;
+
+    // 初始化Publisher（注意使用全局命名空间）
+    ros::Publisher audio_pub = node.advertise<std_msgs::String>("/tts_audio_path", 1);
 
     
     TTS ts;

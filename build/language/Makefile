@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+language/CMakeFiles/AudioPlayer.dir/rule:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/AudioPlayer.dir/rule
+.PHONY : language/CMakeFiles/AudioPlayer.dir/rule
+
+# Convenience name for target.
+AudioPlayer: language/CMakeFiles/AudioPlayer.dir/rule
+
+.PHONY : AudioPlayer
+
+# fast build rule for target.
+AudioPlayer/fast:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/AudioPlayer.dir/build.make language/CMakeFiles/AudioPlayer.dir/build
+.PHONY : AudioPlayer/fast
+
+# Convenience name for target.
 language/CMakeFiles/tts.dir/rule:
 	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f CMakeFiles/Makefile2 language/CMakeFiles/tts.dir/rule
 .PHONY : language/CMakeFiles/tts.dir/rule
@@ -211,6 +226,33 @@ xf_asr: language/CMakeFiles/xf_asr.dir/rule
 xf_asr/fast:
 	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/xf_asr.dir/build.make language/CMakeFiles/xf_asr.dir/build
 .PHONY : xf_asr/fast
+
+src/AudioPlayer/AudioPlayer.o: src/AudioPlayer/AudioPlayer.cpp.o
+
+.PHONY : src/AudioPlayer/AudioPlayer.o
+
+# target to build an object file
+src/AudioPlayer/AudioPlayer.cpp.o:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/AudioPlayer.dir/build.make language/CMakeFiles/AudioPlayer.dir/src/AudioPlayer/AudioPlayer.cpp.o
+.PHONY : src/AudioPlayer/AudioPlayer.cpp.o
+
+src/AudioPlayer/AudioPlayer.i: src/AudioPlayer/AudioPlayer.cpp.i
+
+.PHONY : src/AudioPlayer/AudioPlayer.i
+
+# target to preprocess a source file
+src/AudioPlayer/AudioPlayer.cpp.i:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/AudioPlayer.dir/build.make language/CMakeFiles/AudioPlayer.dir/src/AudioPlayer/AudioPlayer.cpp.i
+.PHONY : src/AudioPlayer/AudioPlayer.cpp.i
+
+src/AudioPlayer/AudioPlayer.s: src/AudioPlayer/AudioPlayer.cpp.s
+
+.PHONY : src/AudioPlayer/AudioPlayer.s
+
+# target to generate assembly for a file
+src/AudioPlayer/AudioPlayer.cpp.s:
+	cd /home/ros/chenxu/educational_robot/build && $(MAKE) -f language/CMakeFiles/AudioPlayer.dir/build.make language/CMakeFiles/AudioPlayer.dir/src/AudioPlayer/AudioPlayer.cpp.s
+.PHONY : src/AudioPlayer/AudioPlayer.cpp.s
 
 src/angle_wakeup/mic.o: src/angle_wakeup/mic.cpp.o
 
@@ -358,11 +400,15 @@ help:
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... AudioPlayer"
 	@echo "... tts"
 	@echo "... edit_cache"
 	@echo "... test"
 	@echo "... mic"
 	@echo "... xf_asr"
+	@echo "... src/AudioPlayer/AudioPlayer.o"
+	@echo "... src/AudioPlayer/AudioPlayer.i"
+	@echo "... src/AudioPlayer/AudioPlayer.s"
 	@echo "... src/angle_wakeup/mic.o"
 	@echo "... src/angle_wakeup/mic.i"
 	@echo "... src/angle_wakeup/mic.s"

@@ -142,6 +142,7 @@ add_executable(xf_asr src/text_to_speech/xf_asr.cpp
                       src/text_to_speech/linuxrec.cpp)
 add_executable(mic src/angle_wakeup/mic.cpp)
 add_executable(tts src/tts/tts_init.cpp)
+add_executable(AudioPlayer src/AudioPlayer/AudioPlayer.cpp)
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
 ## target back to the shorter version for ease of user use
@@ -167,6 +168,9 @@ target_link_libraries(mic
 target_link_libraries(tts
 ${catkin_LIBRARIES} msc rt dl pthread stdc++
 )
+
+target_link_libraries(AudioPlayer ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############

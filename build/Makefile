@@ -480,6 +480,19 @@ rosgraph_msgs_generate_messages_py/fast:
 .PHONY : rosgraph_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named AudioPlayer
+
+# Build rule for target.
+AudioPlayer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 AudioPlayer
+.PHONY : AudioPlayer
+
+# fast build rule for target.
+AudioPlayer/fast:
+	$(MAKE) -f language/CMakeFiles/AudioPlayer.dir/build.make language/CMakeFiles/AudioPlayer.dir/build
+.PHONY : AudioPlayer/fast
+
+#=============================================================================
 # Target rules for targets named tts
 
 # Build rule for target.
@@ -1270,6 +1283,7 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... AudioPlayer"
 	@echo "... tts"
 	@echo "... mic"
 	@echo "... xf_asr"
