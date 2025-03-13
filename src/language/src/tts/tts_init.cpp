@@ -59,6 +59,10 @@ int text_to_speech(const char* src_text, const char* des_path, const char* param
     unsigned int audio_len    = 0;  // 音频数据长度
     wave_pcm_hdr wav_hdr      = default_wav_hdr;  // WAV文件头
     int          synth_status = MSP_TTS_FLAG_STILL_HAVE_DATA;  // 合成状态
+        // 在text_to_speech函数中增加：
+        if (synth_status == MSP_TTS_FLAG_DATA_END && audio_len == 0) {
+            printf("[WARN] 合成完成但未获取到音频数据\n");
+        }
 
     if (NULL == src_text || NULL == des_path)
     {
@@ -87,6 +91,11 @@ int text_to_speech(const char* src_text, const char* des_path, const char* param
         fclose(fp);
         return ret;
     }
+    // 在text_to_speech函数中增加：
+if (synth_status == MSP_TTS_FLAG_DATA_END && audio_len == 0) {
+    printf("[WARN] 合成完成但未获取到音频数据\n");
+}
+
     printf("正在合成 ...\n");
     fwrite(&wav_hdr, sizeof(wav_hdr) ,1, fp); //添加wav音频头，使用采样率为16000
     while (1) 
@@ -162,6 +171,7 @@ void tts_init( )
     ret = MSPLogin(NULL, NULL, login_params); //第一个参数是用户名，第二个参数是密码，第三个参数是登录参数，用户名和密码可在http://www.xfyun.cn注册获取
     if (MSP_SUCCESS != ret) //如果登陆失败，则结束任务
     {
+          printf("[ERROR] MSPLogin failed: %d\n", ret);
         printf("MSPLogin failed, error code: %d.\n", ret);
         MSPLogout(); //退出登录
         return;
@@ -196,6 +206,8 @@ int main(int argc, char** argv)
     printf("开始合成 ...\n");
     ts.text                 = "你好小飞"; //合成文本
     ts.ret = text_to_speech(ts.text,filename_fin.c_str(),session_fin.c_str());
+    cout << ">>>>>>> Session params: " << session_fin << endl;
+
     if (MSP_SUCCESS != ts.ret)
     {
         printf("text_to_speech failed, error code: %d.\n", ts.ret);
