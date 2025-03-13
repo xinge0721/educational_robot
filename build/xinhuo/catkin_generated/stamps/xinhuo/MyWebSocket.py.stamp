@@ -1,3 +1,6 @@
+# 在文件顶部添加ROS依赖
+import rospy
+from std_msgs.msg import String
 
 import base64
 import datetime
@@ -10,6 +13,7 @@ from wsgiref.handlers import format_date_time
 import websocket  # 使用websocket_client库
 import _thread as thread
 import ssl
+
 # 初始上下文内容，当前可传system、user、assistant等角色
 
 # 生成请求参数的函数
@@ -52,13 +56,14 @@ class Ws_Param(object):
 
 # 初始化全局变量，用于保存完整的AI回答
 full_answer = ""
+pub_tts = None
 
 # WebSocket消息处理函数
 def on_message(ws, message):
     """
     处理接收到的消息并打印到终端
     """
-    global full_answer  # 使用全局变量来保存完整的回答
+    global full_answer, pub_tts # 使用全局变量来保存完整的回答
 
     # 解析消息
     data = json.loads(message)
@@ -84,10 +89,18 @@ def on_message(ws, message):
 
         # 如果 status 为 2，表示回答完成，关闭 WebSocket 连接
         if status == 2:
-            ws.close()
-            # 在回答结束后输出完整的内容
+        # 确保发布器初始化
+            if pub_tts is None:
+                pub_tts = rospy.Publisher('/tts/text', String, queue_size=10)
+            
+            # 构造ROS消息并发布
+            msg = String()
+            msg.data = full_answer
+            pub_tts.publish(msg)
+            
+            # 后续原有处理保持不变
             print("星火回答:", full_answer)
-            full_answer = ""  # 清空回答以准备下一个问题
+            full_answer = ""
 
 
 # WebSocket错误处理
