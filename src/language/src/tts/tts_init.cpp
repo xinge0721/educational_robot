@@ -1,5 +1,6 @@
 #include "tts_init.h"
-
+#include <ros/ros.h>
+#include <std_msgs/String.h>  // 添加字符串消息头文件
 using namespace std;  // 使用标准命名空间
 
 
@@ -178,13 +179,23 @@ void tts_init( )
     }
 }
 
+// 新建话题回调函数
+void ttsCallback(const std_msgs::String::ConstPtr& msg)
+{
+    printf("收到合成请求，文本内容：%s\n", msg->data.c_str());
+    
+    int ret = text_to_speech(msg->data.c_str(), filename_fin.c_str(), session_fin.c_str());
+    if (MSP_SUCCESS != ret) {
+        printf("合成失败，错误码：%d\n", ret);
+    } else {
+        printf("合成完成，音频已保存至：%s\n", filename_fin.c_str());
+    }
+}
+
 int main(int argc, char** argv)
 {
-
-    ros::init(argc, argv, "tts_node");    //初始化ROS节点
-
-    ros::NodeHandle node("~");    //创建句柄
-
+    ros::init(argc, argv, "tts_node");
+    ros::NodeHandle node("~");
     node.param("source_path", source_path, std::string("${workspaceFolder}"));  // 从ROS参数服务器获取source_path参数
     node.param("/appid", appid, std::string("111111"));  // 从ROS参数服务器获取appid参数
     node.param("/voice_name", voice_name, std::string("111111"));  // 从ROS参数服务器获取voice_name参数
@@ -199,27 +210,22 @@ int main(int argc, char** argv)
 
     
     TTS ts;
-    tts_init();
+     tts_init();  // 初始化语音合成引擎
 
-  
-    /* 文本合成 */
-    printf("开始合成 ...\n");
-    ts.text                 = "你好小飞"; //合成文本
-    ts.ret = text_to_speech(ts.text,filename_fin.c_str(),session_fin.c_str());
-    cout << ">>>>>>> Session params: " << session_fin << endl;
-
-    if (MSP_SUCCESS != ts.ret)
-    {
-        printf("text_to_speech failed, error code: %d.\n", ts.ret);
+    // 创建订阅者（新增）
+    ros::Subscriber sub = node.subscribe("/tts/text", 10, ttsCallback);
+    
+    // 设置循环频率（可选）
+    ros::Rate loop_rate(10);
+    
+    printf("语音合成节点已启动，等待输入...\n");
+    
+    // 保持节点运行（修改）
+    while(ros::ok()) {
+        ros::spinOnce();
+        loop_rate.sleep();
     }
-    printf("合成完毕\n");
-/*	while(ros::ok())
-	{
-		
-	} */
 
-    //ros::spinOnce(); 
-    // ros::spin();  // 进入ROS事件循环
-     
+    MSPLogout(); // 退出登录
     return 0;
 }
