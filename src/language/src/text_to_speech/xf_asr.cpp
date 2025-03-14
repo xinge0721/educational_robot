@@ -208,13 +208,13 @@ int main(int argc, char* argv[])
  
             // printf("3 sec passed\n");  // 打印提示信息
         
-            wakeupFlag=1;  // 设置唤醒标志
             MSPLogout();  // 登出语音识别服务
         }
  
         // 语音识别完成
         if(resultFlag)  // 如果有识别结果
 	{
+        wakeupFlag = 0;
             resultFlag=0;  // 重置结果标志
             std_msgs::String msg;  // 定义ROS消息
             msg.data = g_result;  // 设置消息内容为识别结果

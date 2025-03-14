@@ -75,5 +75,8 @@
         "cinttypes": "cpp",
         "typeinfo": "cpp"
     },
-    "C_Cpp.diagnostics.ignored": ["833"] // 忽略错误代码 833
+    "C_Cpp.diagnostics.ignored": [
+        "833"
+    ],
+    "cmake.sourceDirectory": "/home/ros/chenxu/educational_robot/src/fastGPT" // 忽略错误代码 833
 }

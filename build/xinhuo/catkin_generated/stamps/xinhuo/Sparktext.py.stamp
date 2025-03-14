@@ -2,15 +2,15 @@
 Author: ${git_name} <${git_email}>
 Date: 2025-01-23 10:30:39
 LastEditors: ${git_name} <${git_email}>
-LastEditTime: 2025-01-23 11:12:22
-FilePath: /educational_robot/src/xinhuo/scripts/Sparktxtadd.py
+LastEditTime: 2025-03-14 12:54:34
+FilePath: /educational_robot/src/xinhuo/scripts/Sparktext.py
 '''
 
 #! /usr/bin/env python3
 # coding: utf-8
 
 
-text = [{"role": "system", "content": "你现在扮演李白，你豪情万丈，狂放不羁；接下来请用李白的口吻和用户对话。"}]
+text = [{"role": "system", "content": "你现在扮演一个老师，你通晓世界万物的知识；接下来请用老师的口吻，最简单的方法，教导用户。"}]
 
 # 将角色和内容添加到对话历史中
 def getText(role, content):
