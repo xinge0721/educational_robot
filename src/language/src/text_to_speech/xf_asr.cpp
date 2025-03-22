@@ -87,6 +87,19 @@ void on_speech_begin()
     // printf("Start Listening...\n");  // 打印开始监听提示
 }
 
+// 添加全局变量
+static int g_speech_end_detected = 0;  // 语音结束检测标志
+void (*g_original_on_speech_end)(int reason) = NULL;  // 保存原始回调函数指针
+
+// 添加新的回调函数
+void vad_on_speech_end(int reason)
+{
+    if (reason == END_REASON_VAD_DETECT)
+        g_speech_end_detected = 1;
+    if (g_original_on_speech_end)
+        g_original_on_speech_end(reason);
+}
+
 /**
  * @brief 语音结束回调函数
  * @param reason 结束原因
@@ -94,10 +107,12 @@ void on_speech_begin()
  */
 void on_speech_end(int reason)
 {
-    // if (reason == END_REASON_VAD_DETECT)  // 如果是因为语音活动检测结束
-    //     // printf("\nSpeaking done \n");  // 打印说话结束提示
-    // else
-    //     // printf("\nRecognizer error %d\n", reason);  // 打印识别错误信息
+    if (reason == END_REASON_VAD_DETECT) {  // 如果是因为语音活动检测结束
+        printf("\n检测到语音结束\n");  // 打印说话结束提示
+        resultFlag = 1;  // 设置结果标志
+    }
+    else
+        printf("\n识别错误 %d\n", reason);  // 打印识别错误信息
 }
  
 
@@ -110,6 +125,7 @@ static void demo_mic(const char* session_begin_params)
 {
     int errcode;
     int i = 0;
+    g_speech_end_detected = 0;  // 重置语音结束检测标志
  
     struct speech_rec iat;  // 语音识别器结构体
  
@@ -118,6 +134,11 @@ static void demo_mic(const char* session_begin_params)
         on_speech_begin,
         on_speech_end
     };
+ 
+    // 保存原始的on_speech_end回调
+    g_original_on_speech_end = on_speech_end;
+    // 设置新的回调
+    recnotifier.on_speech_end = vad_on_speech_end;
  
     errcode = sr_init(&iat, session_begin_params, SR_MIC, &recnotifier);  // 初始化语音识别器
     if (errcode) {
@@ -128,9 +149,29 @@ static void demo_mic(const char* session_begin_params)
     if (errcode) {
         // printf("start listen failed %d\n", errcode);  // 开始录音失败
     }
-    /* demo 10 seconds recording */
-    while(i++ < 8)  // 模拟录音10秒
+    
+    // 修改为等待语音结束或超时
+    int max_silence_seconds = 3;   // 最大沉默等待时间
+    int max_total_seconds = 30;    // 最大总录音时间
+    int silence_count = 0;         // 沉默计数器
+    int total_count = 0;           // 总时间计数器
+    
+    // 等待语音结束或超时
+    while (total_count++ < max_total_seconds) {
         sleep(1);
+        
+        if (resultFlag) {  // 有识别结果
+            silence_count = 0;  // 重置沉默计数器
+        } else {
+            silence_count++;  // 增加沉默计数器
+        }
+        
+        // 检测语音结束条件：语音活动检测结束或超过最大沉默时间
+        if (g_speech_end_detected || silence_count >= max_silence_seconds) {
+            break;
+        }
+    }
+    
     errcode = sr_stop_listening(&iat);  // 停止录音
     if (errcode) {
         // printf("stop listening failed %d\n", errcode);  // 停止录音失败
@@ -179,42 +220,45 @@ int main(int argc, char* argv[])
     // 发布语音识别结果
     ros::Publisher voiceWordsPub = n.advertise<std_msgs::String>("chatter", 1000);  // 发布识别结果话题
  
-    ROS_INFO("Sleeping...");  // 打印休眠提示
-    int count=0;
+    ROS_INFO("等待唤醒...");  // 打印休眠提示
+    
+    // 初始化科大讯飞SDK
+    int ret = MSP_SUCCESS;
+    const char* login_params = "appid = 68a31b42, work_dir = .";  // 登录参数
+    
+    const char* session_begin_params =  // 会话参数
+        "sub = iat, domain = iat, language = zh_cn, "
+        "accent = mandarin, sample_rate = 16000, "
+        "result_type = plain, result_encoding = utf8, "
+        "vad_eos = 3000";  // 设置VAD的静音检测时间为3000ms
+
+    // 登录语音识别服务，只需要登录一次
+    ret = MSPLogin(NULL, NULL, login_params);
+    if(MSP_SUCCESS != ret) {
+        printf("MSPLogin失败，错误码 %d.\n", ret);
+        return 1;
+    }
+    
+    int processing = 0;  // 添加处理状态标志
+    
     while(ros::ok())  // ROS主循环
     {
         // 语音识别唤醒
-        if (wakeupFlag){  // 如果唤醒标志为1
-            // ROS_INFO("Wakeup...");  // 打印唤醒提示
-            int ret = MSP_SUCCESS;
-            const char* login_params = "appid = 68a31b42, work_dir = .";  // 登录参数
- 
-            const char* session_begin_params =  // 会话参数
-                "sub = iat, domain = iat, language = zh_cn, "
-                "accent = mandarin, sample_rate = 16000, "
-                "result_type = plain, result_encoding = utf8";
- 
-            ret = MSPLogin(NULL, NULL, login_params);  // 登录语音识别服务
-            if(MSP_SUCCESS != ret){
-                MSPLogout();  // 登出
-                printf("MSPLogin failed , Error code %d.\n",ret);  // 打印登录失败信息
-            }
- 
-            // printf("Demo recognizing the speech from microphone\n");  // 打印提示信息
-	
-	    // printf("Speak in 3 seconds\n");  // 打印提示信息
- 	
+        if (wakeupFlag && !processing) {  // 如果唤醒且未在处理中
+            processing = 1;  // 设置处理状态
+            ROS_INFO("已唤醒，开始聆听...");  // 打印唤醒提示
+            
             demo_mic(session_begin_params);  // 调用麦克风录音识别示例
  
             // printf("3 sec passed\n");  // 打印提示信息
         
-            wakeupFlag=1;  // 设置唤醒标志
             MSPLogout();  // 登出语音识别服务
         }
  
         // 语音识别完成
         if(resultFlag)  // 如果有识别结果
 	{
+        wakeupFlag = 0;
             resultFlag=0;  // 重置结果标志
             std_msgs::String msg;  // 定义ROS消息
             msg.data = g_result;  // 设置消息内容为识别结果
@@ -223,11 +267,9 @@ int main(int argc, char* argv[])
  
         ros::spinOnce();  // 处理ROS回调
         loop_rate.sleep();  // 休眠以维持循环频率
-        count++;
     }
  
-exit:
-    MSPLogout(); // Logout...  // 登出语音识别服务
+    MSPLogout(); // 登出语音识别服务
  
     return 0;  // 程序正常退出
 }

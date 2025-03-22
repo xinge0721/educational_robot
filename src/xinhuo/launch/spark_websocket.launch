@@ -1,0 +1,10 @@
+<launch>
+  <!-- 启动语音识别节点 -->
+  <node name="voiceRecognition" pkg="language" type="xf_asr" output="screen"/>
+  
+  <!-- 启动基于WebSocket的星火大模型节点 -->
+  <node name="spark_websocket_node" pkg="xinhuo" type="websocket/SparkWebSocket.py" output="screen"/>
+  
+  <!-- 启动文本转语音节点，如果有的话 -->
+  <!-- <node name="tts_node" pkg="tts_package" type="tts_node" output="screen"/> -->
+</launch> 

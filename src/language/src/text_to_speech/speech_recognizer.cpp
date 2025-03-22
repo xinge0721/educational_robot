@@ -171,6 +171,8 @@ int sr_init_ex(struct speech_rec * sr, const char * session_begin_params,
 		session_begin_params = DEFAULT_SESSION_PARA;
 	}
 
+	printf("初始化语音识别...\n");
+	
 	SR_MEMSET(sr, 0, sizeof(struct speech_rec));
 	sr->state = SR_STATE_INIT;
 	sr->aud_src = aud_src;
@@ -189,20 +191,32 @@ int sr_init_ex(struct speech_rec * sr, const char * session_begin_params,
 	sr->notif = *notify;
 	
 	if (aud_src == SR_MIC) {
+		printf("创建录音器...\n");
 		errcode = create_recorder(&sr->recorder, iat_cb, (void*)sr);
 		if (sr->recorder == NULL || errcode != 0) {
 			sr_dbg("create recorder failed: %d\n", errcode);
+			printf("创建录音器失败: %d\n", errcode);
 			errcode = -E_SR_RECORDFAIL;
 			goto fail;
 		}
 		update_format_from_sessionparam(session_begin_params, &wavfmt);
 	
+		// 打印录音器参数
+		printf("采样率: %d, 通道数: %d, 位宽: %d\n", 
+			wavfmt.nSamplesPerSec, wavfmt.nChannels, wavfmt.wBitsPerSample);
+		
+		printf("打开录音器...\n");
+		
+		// 调用open_recorder, 现在已经修改为使用hw:1,0
 		errcode = open_recorder(sr->recorder, devid, &wavfmt);
 		if (errcode != 0) {
 			sr_dbg("recorder open failed: %d\n", errcode);
+			printf("打开录音器失败: %d\n", errcode);
 			errcode = -E_SR_RECORDFAIL;
 			goto fail;
 		}
+		
+		printf("录音器打开成功\n");
 	}
 
 	return 0;

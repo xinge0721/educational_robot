@@ -2,8 +2,15 @@
 #include <ros/ros.h>
 #include <std_msgs/String.h>  // 添加字符串消息头文件
 #include <sys/stat.h>
+#include <queue>  // 添加队列头文件
+#include <mutex>  // 添加互斥锁头文件
+#include <chrono>  // 添加时间头文件，用于生成唯一文件名
 using namespace std;  // 使用标准命名空间
 
+// 定义队列和互斥锁用于管理TTS请求
+std::queue<std::string> tts_queue;  // 语音合成请求队列
+std::mutex queue_mutex;  // 队列互斥锁
+bool is_processing = false;  // 是否正在处理语音合成请求的标志
 
 // 将std::string转换为std::wstring
 std::wstring s2ws(const std::string &str)
@@ -208,6 +215,27 @@ void tts_init( )
 
     //cout<< ">>>>>>> session_begin_params:"<< session_begin_params<< endl;
 
+    // 确保音频目录存在
+    std::string audio_dir = source_path + "/audio";
+    struct stat st;
+    if (stat(audio_dir.c_str(), &st) != 0) {
+        // 目录不存在，创建它
+        printf("音频目录不存在，正在创建: %s\n", audio_dir.c_str());
+        
+        #ifdef _WIN32
+        // Windows系统
+        std::string cmd = "mkdir \"" + audio_dir + "\"";
+        #else
+        // Linux/Unix系统
+        std::string cmd = "mkdir -p \"" + audio_dir + "\"";
+        #endif
+        
+        int result = system(cmd.c_str());
+        if (result != 0) {
+            printf("[ERROR] 无法创建音频目录: %s\n", audio_dir.c_str());
+        }
+    }
+
     filename_fin		 = source_path + "/audio/output.wav";  // 生成输出文件名
     // const char* filename             = filename_fin.c_str(); //合成的语音文件名称
     /* 用户登录 */
@@ -220,22 +248,85 @@ void tts_init( )
         return;
     }
 }
+
+// 处理队列中的下一个TTS请求
+void processNextTtsRequest() {
+    std::string text_to_process;
+    
+    // 获取互斥锁，检查队列中是否有待处理的请求
+    {
+        std::lock_guard<std::mutex> lock(queue_mutex);
+        if (tts_queue.empty()) {
+            is_processing = false;
+            printf("队列处理完毕，等待新的请求\n");
+            return;
+        }
+        
+        // 从队列中取出下一个请求
+        text_to_process = tts_queue.front();
+        tts_queue.pop();
+        
+        // 设置处理标志为true
+        is_processing = true;
+    }
+    
+    printf("正在处理队列中的文本：%s\n", text_to_process.c_str());
+    
+    // 生成唯一的文件名，避免文件冲突
+    std::string unique_filename = source_path + "/audio/output_" + 
+                                  std::to_string(std::chrono::system_clock::now().time_since_epoch().count()) + ".wav";
+    
+    // 执行文本到语音的转换
+    int ret = text_to_speech(text_to_process.c_str(), unique_filename.c_str(), session_fin.c_str());
+    
+    if (MSP_SUCCESS != ret) {
+        printf("合成失败，错误码：%d，跳过当前文本\n", ret);
+        
+        // 即使当前处理失败，也继续处理队列中的下一个请求
+        ros::Duration(0.1).sleep();  // 短暂延迟，避免过快失败导致的资源问题
+        processNextTtsRequest();
+    } else {
+        printf("合成完成，音频已保存至：%s\n", unique_filename.c_str());
+        
+        // 播放并删除音频文件
+        bool play_success = playAndDeleteAudio(unique_filename.c_str());
+        
+        if (!play_success) {
+            printf("播放失败或文件删除失败，继续处理下一个\n");
+            // 尝试再次删除文件，确保不会留下临时文件
+            std::remove(unique_filename.c_str());
+        } else {
+            printf("播放成功并已删除音频文件\n");
+        }
+        
+        // 无论播放是否成功，继续处理队列中的下一个请求
+        ros::Duration(0.1).sleep();  // 短暂延迟，确保系统有时间处理
+        processNextTtsRequest();
+    }
+}
+
 ros::Publisher audio_pub;
 // 新建话题回调函数
 void ttsCallback(const std_msgs::String::ConstPtr& msg)
 {
     printf("收到合成请求，文本内容：%s\n", msg->data.c_str());
     
-    int ret = text_to_speech(msg->data.c_str(), filename_fin.c_str(), session_fin.c_str());
-    if (MSP_SUCCESS != ret) {
-        printf("合成失败，错误码：%d\n", ret);
-    } else {
-        printf("合成完成，音频已保存至：%s\n", filename_fin.c_str());
-        playAndDeleteAudio(filename_fin.c_str());
-        // std_msgs::String path_msg;
-        // path_msg.data = filename_fin;
-        // audio_pub.publish(path_msg); // 现在使用持久化的Publisher
-
+    // 检查是否是"对话已结束"特殊标记，如果是则直接返回，不进行处理
+    if (msg->data == "对话已结束") {
+        printf("收到对话结束标记，跳过处理\n");
+        return;
+    }
+    
+    // 获取互斥锁，将新的请求添加到队列中
+    {
+        std::lock_guard<std::mutex> lock(queue_mutex);
+        tts_queue.push(msg->data);
+        printf("已将文本添加到队列，当前队列长度：%zu\n", tts_queue.size());
+    }
+    
+    // 如果当前没有正在处理的请求，则开始处理队列
+    if (!is_processing) {
+        processNextTtsRequest();
     }
 }
 

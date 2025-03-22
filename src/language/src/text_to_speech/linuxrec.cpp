@@ -436,31 +436,52 @@ static int open_recorder_internal(struct recorder * rec,
 		record_dev_id dev, WAVEFORMATEX * fmt)
 {
 	int err = 0;
-
-	err = snd_pcm_open((snd_pcm_t **)&rec->wavein_hdl, dev.u.name, 
+	char dev_name[64] = {0};
+	
+	// 创建设备名称
+	if (dev.u.name != NULL) {
+		strncpy(dev_name, dev.u.name, sizeof(dev_name) - 1);
+	} else {
+		strcpy(dev_name, "hw:1,0");  // 默认使用hw:1,0
+	}
+	
+	printf("正在打开录音设备: %s\n", dev_name);
+	
+	err = snd_pcm_open((snd_pcm_t **)&rec->wavein_hdl, dev_name, 
 			SND_PCM_STREAM_CAPTURE, 0);
-	if(err < 0)
+	if(err < 0) {
+		printf("打开录音设备失败: %s, 错误: %s\n", dev_name, snd_strerror(err));
 		goto fail;
+	}
 
+	printf("录音设备打开成功，设置参数\n");
 	err = set_params(rec, fmt, DEF_BUFF_TIME, DEF_PERIOD_TIME);
-	if(err)
+	if(err) {
+		printf("设置录音参数失败: %s\n", snd_strerror(err));
 		goto fail;
+	}
 
 	assert(rec->bufheader == NULL);
 	err = prepare_rec_buffer(rec);
-	if(err)
+	if(err) {
+		printf("准备录音缓冲区失败\n");
 		goto fail;
+	}
 
 	err = create_record_thread((void*)rec, 
 			&rec->rec_thread);
-	if(err)
+	if(err) {
+		printf("创建录音线程失败: %d\n", err);
 		goto fail;
+	}
 	
-
+	printf("录音设备初始化完成\n");
 	return 0;
 fail:
-	if(rec->wavein_hdl)
+	if(rec->wavein_hdl) {
+		printf("关闭录音设备\n");
 		snd_pcm_close((snd_pcm_t *) rec->wavein_hdl);
+	}
 	rec->wavein_hdl = NULL;
 	free_rec_buffer(rec);
 	return err;
@@ -641,16 +662,29 @@ void destroy_recorder(struct recorder *rec)
 int open_recorder(struct recorder * rec, record_dev_id dev, WAVEFORMATEX * fmt)
 {
 	int ret = 0;
-	if(!rec )
+	char dev_str[64] = {0};
+
+	if(!rec)
 		return -RECORD_ERR_INVAL;
 	if(rec->state >= RECORD_STATE_READY)
 		return 0;
 
-	ret = open_recorder_internal(rec, dev, fmt);
+	// 硬编码使用hw:1,0设备，不再使用传入的dev.u.name
+	// 原代码: ret = open_recorder_internal(rec, dev, fmt);
+	
+	// 修改为硬编码的hw:1,0设备
+	record_dev_id fixed_dev;
+	fixed_dev.u.name = "hw:1,0";  // 直接指定使用card 1, device 0
+	
+	printf("尝试打开录音设备: %s\n", fixed_dev.u.name);  // 添加调试信息
+	
+	ret = open_recorder_internal(rec, fixed_dev, fmt);
 	if(ret == 0)
 		rec->state = RECORD_STATE_READY;
-	return 0;
-
+	else
+		printf("打开录音设备失败，错误码: %d\n", ret);  // 添加更详细的错误信息
+	
+	return ret;
 }
 
 void close_recorder(struct recorder *rec)
