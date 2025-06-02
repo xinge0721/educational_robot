@@ -1,8 +1,0 @@
-prefix=/home/ros/chenxu/educational_robot/install
-
-Name: xinhuo
-Description: Description of xinhuo
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

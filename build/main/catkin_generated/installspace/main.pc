@@ -1,8 +1,0 @@
-prefix=/home/ros/chenxu/educational_robot/install
-
-Name: main
-Description: Description of main
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

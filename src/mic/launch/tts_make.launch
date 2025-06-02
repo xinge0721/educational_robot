@@ -1,0 +1,14 @@
+<!--离线语音合成-->
+<launch>
+  <!-- 将参数都压入参数服务器 -->
+  <rosparam command="load" file="$(find mic)/config/tts_params.yaml" />
+ 
+  <arg name="package_path" default = "$(find mic)" />
+
+  <arg name="tts_ori" default = "你好，小薇" />
+
+  <node pkg="mic" type="tts" name="tts" output="screen">
+    <param name="source_path" type="string" value="$(arg package_path)"/>
+    <param name="tts_text" type="string" value="$(arg tts_ori)"/> 
+  </node>
+</launch>
