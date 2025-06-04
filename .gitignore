@@ -1,0 +1,12 @@
+# ROS 编译目录
+build/
+devel/
+install/
+moxi/
+# Catkin 生成文件
+catkin_workspace/
+*.catkin
+
+# 其他
+*.pyc
+__pycache__/
